@@ -1,5 +1,23 @@
 <script setup>
+import { ref } from 'vue'
 import AppBackground from '../components/AppBackground.vue'
+
+const staffId = ref('')
+const password = ref('')
+
+function submit() {
+  if (staffId.value === '' || password.value === '') {
+    alert('Please fill all the fields')
+  } else {
+    const data = {
+      staffId: staffId.value,
+      password: password.value
+    }
+    console.log(data)
+    staffId.value = ''
+    password.value = ''
+  }
+}
 </script>
 
 <template>
@@ -20,12 +38,25 @@ import AppBackground from '../components/AppBackground.vue'
       </div>
 
       <div class="container-form">
-        <form>
+        <form @submit.prevent="submit">
           <label for="staffId">Staff Id</label>
-          <input type="text" id="stId" placeholder="Enter your staff id" autofocus />
+          <input
+            type="text"
+            id="stId"
+            placeholder="Enter your staff id"
+            autofocus
+            required
+            v-model="staffId"
+          />
 
           <label for="password" class="mt-2">Password</label>
-          <input type="password" id="password" placeholder="Enter your password" />
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            required
+            v-model="password"
+          />
 
           <button type="submit">Submit</button>
         </form>

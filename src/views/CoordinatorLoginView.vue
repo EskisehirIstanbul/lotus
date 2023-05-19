@@ -1,5 +1,23 @@
 <script setup>
+import { ref } from 'vue'
 import AppBackground from '../components/AppBackground.vue'
+
+const coordinatorId = ref('')
+const password = ref('')
+
+function submit() {
+  if (coordinatorId.value === '' || password.value === '') {
+    alert('Please fill all the fields')
+  } else {
+    const data = {
+      coordinatorId: coordinatorId.value,
+      password: password.value
+    }
+    console.log(data)
+    coordinatorId.value = ''
+    password.value = ''
+  }
+}
 </script>
 
 <template>
@@ -19,12 +37,25 @@ import AppBackground from '../components/AppBackground.vue'
       </div>
 
       <div class="container-form">
-        <form>
+        <form @submit.prevent="submit">
           <label for="iCoorId">Coordinator Id</label>
-          <input type="text" id="stId" placeholder="Enter your coordinator id" autofocus />
+          <input
+            type="text"
+            id="stId"
+            placeholder="Enter your coordinator id"
+            autofocus
+            required
+            v-model="coordinatorId"
+          />
 
           <label for="password" class="mt-2">Password</label>
-          <input type="password" id="password" placeholder="Enter your password" />
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            required
+            v-model="password"
+          />
 
           <button type="submit">Submit</button>
         </form>
