@@ -1,63 +1,56 @@
 <script setup>
 import { ref } from 'vue'
-import AppBackground from '../components/AppBackground.vue'
+import AdminHeader from '../../components/AdminHeader.vue'
+import AppBackground from '../../components/AppBackground.vue'
 
-const coordinatorId = ref('')
+const adminId = ref('')
 const password = ref('')
 
 function submit() {
-  if (coordinatorId.value === '' || password.value === '') {
+  if (adminId.value === '' || password.value === '') {
     alert('Please fill all the fields')
   } else {
     const data = {
-      coordinatorId: coordinatorId.value,
+      adminId: adminId.value,
       password: password.value
     }
     console.log(data)
-    coordinatorId.value = ''
+    adminId.value = ''
     password.value = ''
   }
 }
 </script>
 
 <template>
-  <AppBackground />
+  <AdminHeader />
   <div class="container cnt d-flex justify-content-center align-items-center" style="height: 100vh">
+    <AppBackground />
     <div class="c">
-      <div class="container-label text-center">
-        <div>
-          <img
-            src="../assets/images/uskudar-universitesi-logo.png"
-            alt="Logo"
-            class="img-fluid"
-            style="width: 10rem; height: 10rem"
-          />
-        </div>
-        <br />Coordinator Login
-      </div>
-
       <div class="container-form">
-        <form @submit.prevent="submit">
-          <label for="iCoorId">Coordinator Id</label>
+        <form
+          style="border-top-right-radius: 0%; border-bottom-right-radius: 0%"
+          @submit.prevent="submit"
+        >
+          <label for="iCoorId">Admin Id</label>
           <input
             type="text"
             id="stId"
-            placeholder="Enter your coordinator id"
+            placeholder="Enter your id"
             autofocus
             required
-            v-model="coordinatorId"
+            v-model="adminId"
           />
 
           <label for="password" class="mt-2">Password</label>
           <input
+            required
             type="password"
             id="password"
             placeholder="Enter your password"
-            required
             v-model="password"
           />
 
-          <button type="submit">Submit</button>
+          <button id="button2" type="submit">Submit</button>
         </form>
       </div>
     </div>

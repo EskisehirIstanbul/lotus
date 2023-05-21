@@ -1,34 +1,25 @@
 <script>
 import { ref, onMounted } from 'vue'
+import { RouterLink } from 'vue-router'
 
 export default {
   setup() {
     const body = ref(null)
     const sidebar = ref(null)
     const toggle = ref(null)
-    const searchBtn = ref(null)
     const modeSwitch = ref(null)
     const modeText = ref(null)
-
     onMounted(() => {
       body.value = document.querySelector('body')
       sidebar.value = body.value.querySelector('nav')
       toggle.value = body.value.querySelector('.toggle')
-      searchBtn.value = body.value.querySelector('.search-box')
       modeSwitch.value = body.value.querySelector('.toggle-switch')
       modeText.value = body.value.querySelector('.mode-text')
-
       toggle.value.addEventListener('click', () => {
         sidebar.value.classList.toggle('close')
       })
-
-      searchBtn.value.addEventListener('click', () => {
-        sidebar.value.classList.remove('close')
-      })
-
       modeSwitch.value.addEventListener('click', () => {
         body.value.classList.toggle('dark')
-
         if (body.value.classList.contains('dark')) {
           modeText.value.innerText = 'Light mode'
         } else {
@@ -36,16 +27,15 @@ export default {
         }
       })
     })
-
     return {
       body,
       sidebar,
       toggle,
-      searchBtn,
       modeSwitch,
       modeText
     }
-  }
+  },
+  components: { RouterLink }
 }
 </script>
 
@@ -69,52 +59,32 @@ export default {
 
       <div class="menu-bar">
         <div class="menu">
-          <li class="search-box">
-            <i class="bx bx-search icon"></i>
-            <input type="text" placeholder="Search..." />
-          </li>
-
           <ul class="">
             <li class="">
-              <a href="#">
+              <RouterLink :to="{ name: 'StudentHome' }">
                 <i class="bx bx-home-alt icon"></i>
-                <span class="text nav-text">Student</span>
-              </a>
+                <span class="text nav-text">Homepage</span>
+              </RouterLink>
             </li>
 
             <li class="">
-              <a href="#">
-                <i class="bx bx-bar-chart-alt-2 icon"></i>
-                <span class="text nav-text">Career</span>
-              </a>
+              <RouterLink :to="{ name: 'StudentMessages' }">
+                <i class="bx icon bx-message-square-detail"></i>
+                <span class="text nav-text">Messages</span>
+              </RouterLink>
             </li>
 
             <li class="">
-              <a href="#">
-                <i class="bx bx-bell icon"></i>
-                <span class="text nav-text">Notifications</span>
-              </a>
+              <RouterLink :to="{ name: 'StudentDocuments' }">
+                <i class="bx icon bx-file"></i>
+                <span class="text nav-text">Documents</span>
+              </RouterLink>
             </li>
-
-            <li class="">
-              <a href="#">
-                <i class="bx bx-pie-chart-alt icon"></i>
-                <span class="text nav-text">Form Process</span>
-              </a>
-            </li>
-
-            <li class="">
-              <a href="#">
-                <i class="bx bx-heart icon"></i>
-                <span class="text nav-text">Inbox</span>
-              </a>
-            </li>
-
-            <li class="">
-              <a href="#">
-                <i class="bx bx-wallet icon"></i>
-                <span class="text nav-text">Internship</span>
-              </a>
+            <li>
+              <RouterLink :to="{ name: 'StudentOpportunities' }">
+                <i class="bx icon bx-briefcase"></i>
+                <span class="text nav-text">Opportunities</span>
+              </RouterLink>
             </li>
           </ul>
         </div>
@@ -143,7 +113,7 @@ export default {
     </nav>
 
     <section class="home">
-      <div class="text"></div>
+      <RouterView />
     </section>
   </div>
 </template>
@@ -171,7 +141,6 @@ export default {
   --tran-04: all 0.3s ease;
   --tran-05: all 0.3s ease;
 }
-
 
 ::selection {
   background-color: var(--primary-color);
@@ -452,7 +421,8 @@ body.dark .home .text {
   color: var(--text-color);
 }
 
-ul, ol {
+ul,
+ol {
   padding-left: 0;
 }
 </style>

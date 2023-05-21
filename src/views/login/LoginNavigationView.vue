@@ -1,5 +1,5 @@
 <script setup>
-import AppBackground from '../components/AppBackground.vue'
+import AppBackground from '../../components/AppBackground.vue'
 </script>
 
 <template>
@@ -8,7 +8,7 @@ import AppBackground from '../components/AppBackground.vue'
     <div class="row justify-content-center align-items-center vh-100">
       <div class="col-md-6 text-center">
         <img
-          src="../assets/images/uskudar-universitesi-logo.png"
+          src="../../assets/images/uskudar-universitesi-logo.png"
           alt="Logo"
           class="img-fluid mb-3"
           style="width: 14rem; height: 14rem"
