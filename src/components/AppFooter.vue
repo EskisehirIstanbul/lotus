@@ -9,5 +9,16 @@
 </template>
 
 <style scoped>
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(14, 22, 61);
+    color: #fff;
+    text-align: center;
+    padding: 9px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
 </style>

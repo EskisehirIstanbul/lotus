@@ -4,6 +4,7 @@ import CoordinatorLoginView from '../views/CoordinatorLoginView.vue'
 import StudentLoginView from '../views/StudentLoginView.vue'
 import AdminLoginView from '../views/AdminLoginView.vue'
 import LoginNavigationView from '../views/LoginNavigationView.vue'
+import StudentDashboardView from '../views/StudentDashboardView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,6 +35,11 @@ const router = createRouter({
       path: '/admin',
       name: 'admin-login',
       component: AdminLoginView
+    },
+    {
+      path: '/student-dashboard',
+      name: 'student-dashboard',
+      component: StudentDashboardView
     }
   ]
 })
