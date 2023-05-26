@@ -1,5 +1,7 @@
 <script setup>
+
 import AppBackground from '../../components/AppBackground.vue'
+
 </script>
 
 <template>

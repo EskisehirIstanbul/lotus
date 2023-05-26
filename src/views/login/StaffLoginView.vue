@@ -1,4 +1,5 @@
 <script setup>
+
 import { ref } from 'vue'
 import AppBackground from '../../components/AppBackground.vue'
 
@@ -18,6 +19,7 @@ function submit() {
     password.value = ''
   }
 }
+
 </script>
 
 <template>

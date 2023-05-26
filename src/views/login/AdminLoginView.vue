@@ -1,4 +1,5 @@
 <script setup>
+
 import AppBackground from '../../components/AppBackground.vue'
 import { ref } from 'vue'
 
