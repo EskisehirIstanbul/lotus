@@ -1,3 +1,3 @@
 <template>
-  messages view
+  new messages
 </template>
