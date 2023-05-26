@@ -1,0 +1,3 @@
+<template>
+  messages view
+</template>

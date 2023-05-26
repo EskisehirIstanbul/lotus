@@ -28,6 +28,15 @@ import AdminAssignCoordView from '../views/dashboard/admin/assign/AdminAssignCoo
 import AdminAssignStaffView from '../views/dashboard/admin/assign/AdminAssignStaffView.vue'
 import AdminHomeView from '../views/dashboard/admin/home/AdminHomeView.vue'
 
+import CCDashboardView from '../views/dashboard/cc/CCDashboardView.vue'
+import CCHomeView from '../views/dashboard/cc/home/CCHomeView.vue'
+import CCMessagesView from '../views/dashboard/cc/messages/CCMessagesView.vue'
+import CCNewMessagesView from '../views/dashboard/cc/messages/CCNewMessagesView.vue'
+import CCIncomingMessagesView from '../views/dashboard/cc/messages/CCIncomingMessagesView.vue'
+import CCOutgoingMessagesView from '../views/dashboard/cc/messages/CCOutgoingMessagesView.vue'
+import CCFormsAndSGKView from '../views/dashboard/cc/forms/CCFormsAndSGKView.vue'
+import CCNewOpportunityView from '../views/dashboard/cc/opportunities/CCNewOpportunityView.vue'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -165,6 +174,55 @@ const router = createRouter({
           path: 'assign-staff',
           name: 'AdminAssignStaff',
           component: AdminAssignStaffView
+        }
+      ]
+    },
+    {
+      path: '/cc-dashboard',
+      name: 'CCDashboard',
+      component: CCDashboardView,
+      children: [
+        {
+          path: '',
+          name: 'CCHome',
+          component: CCHomeView
+        },
+        {
+          path: 'messages',
+          name: 'CCMessages',
+          component: CCMessagesView,
+          children: [
+            {
+              path: '',
+              name: 'CCNewMessages',
+              component: CCNewMessagesView
+            },
+            {
+              path: 'incoming',
+              name: 'CCIncomingMessages',
+              component: CCIncomingMessagesView
+            },
+            {
+              path: 'outgoing',
+              name: 'CCOutgoingMessages',
+              component: CCOutgoingMessagesView
+            },
+            {
+              path: 'details',
+              name: 'CCMessageDetails',
+              component: CCMessageDetailsView
+            }
+          ]
+        },
+        {
+          path: 'forms-and-sgk',
+          name: 'CCFormsAndSGK',
+          component: CCFormsAndSGKView
+        },
+        {
+          path: 'new-opportunity',
+          name: 'CCNewOpportunity',
+          component: CCNewOpportunityView
         }
       ]
     }
