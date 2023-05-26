@@ -34,6 +34,7 @@ import CCMessagesView from '../views/dashboard/cc/messages/CCMessagesView.vue'
 import CCNewMessagesView from '../views/dashboard/cc/messages/CCNewMessagesView.vue'
 import CCIncomingMessagesView from '../views/dashboard/cc/messages/CCIncomingMessagesView.vue'
 import CCOutgoingMessagesView from '../views/dashboard/cc/messages/CCOutgoingMessagesView.vue'
+import CCMessageDetailsView from '../views/dashboard/cc/messages/CCMessageDetailsView.vue'
 import CCFormsAndSGKView from '../views/dashboard/cc/forms/CCFormsAndSGKView.vue'
 import CCNewOpportunityView from '../views/dashboard/cc/opportunities/CCNewOpportunityView.vue'
 
