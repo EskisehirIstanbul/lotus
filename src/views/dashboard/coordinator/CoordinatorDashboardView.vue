@@ -40,7 +40,7 @@ export default {
 
           <div class="text logo-text">
             <span class="name">LOTUS</span>
-            <span class="profession">Student Panel</span>
+            <span class="profession">Coordinator Panel</span>
           </div>
         </div>
 
@@ -51,29 +51,29 @@ export default {
         <div class="menu">
           <ul class="">
             <li class="">
-              <RouterLink :to="{ name: 'StudentHome' }">
+              <RouterLink :to="{ name: 'CoordinatorHome' }">
                 <i class="bx bx-home-alt icon"></i>
                 <span class="text nav-text">Homepage</span>
               </RouterLink>
             </li>
 
             <li class="">
-              <RouterLink :to="{ name: 'StudentMessages' }">
+              <RouterLink :to="{ name: 'CoordinatorMessages' }">
                 <i class="bx icon bx-message-square-detail"></i>
                 <span class="text nav-text">Messages</span>
               </RouterLink>
             </li>
 
             <li class="">
-              <RouterLink :to="{ name: 'StudentDocuments' }">
-                <i class="bx icon bx-file"></i>
-                <span class="text nav-text">Documents</span>
+              <RouterLink :to="{ name: 'CoordinatorFormProcessing' }">
+                <i class="bx icon bx-pencil"></i>
+                <span class="text nav-text">Form Processes</span>
               </RouterLink>
             </li>
             <li>
-              <RouterLink :to="{ name: 'StudentOpportunities' }">
-                <i class="bx icon bx-briefcase"></i>
-                <span class="text nav-text">Opportunities</span>
+              <RouterLink :to="{ name: 'CoordinatorDocumentProcessing' }">
+                <i class="bx icon bx-upload"></i>
+                <span class="text nav-text">Upload</span>
               </RouterLink>
             </li>
           </ul>
@@ -97,6 +97,7 @@ export default {
 </template>
 
 <style scoped>
+@import url("../../../assets/css/coor.css");
 
 * {
   margin: 0;
@@ -143,7 +144,7 @@ body.dark {
   height: 96%;
   width: 250px;
   padding: 17px 14px;
-  background: linear-gradient(157deg, #2b8f9a, #0e163d);
+  background: rgb(14, 22, 61);
   transition: var(--tran-05);
   z-index: 100;
 }

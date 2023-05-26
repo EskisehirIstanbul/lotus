@@ -1,7 +1,7 @@
 <template>
   <div class="card card-primary card-outline" style="height: 630px">
     <div class="card-header">
-      <h3 class="card-title" style="color: #2c919c">Outgoing Messages</h3>
+      <h3 class="card-title" style="color: #0c0075">Outgoing Messages</h3>
     </div>
     <!-- /.card-header -->
     <div class="card-body p-0">
@@ -24,7 +24,7 @@
               <td class="mailbox-attachment"></td>
               <td class="mailbox-date">1 week ago</td>
               <td width="100">
-                <a href="#" class="btn btn-sm text-white" style="background-color: #2c919c"
+                <a href="#" class="btn btn-sm text-white" style="background-color: #0c0075"
                   ><i class="fa fa-search"></i
                 ></a>
                 <a
@@ -52,7 +52,7 @@
               <td class="mailbox-attachment"></td>
               <td class="mailbox-date">1 week ago</td>
               <td width="100">
-                <a href="#" class="btn btn-sm text-white" style="background-color: #2c919c"
+                <a href="#" class="btn btn-sm text-white" style="background-color: #0c0075"
                   ><i class="fa fa-search"></i
                 ></a>
                 <a
@@ -80,7 +80,7 @@
               <td class="mailbox-attachment"></td>
               <td class="mailbox-date">2 weeks ago</td>
               <td width="100">
-                <a href="#" class="btn btn-sm text-white" style="background-color: #2c919c"
+                <a href="#" class="btn btn-sm text-white" style="background-color: #0c0075"
                   ><i class="fa fa-search"></i
                 ></a>
                 <a

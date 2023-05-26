@@ -36,7 +36,7 @@ export default {
       <div class="row" style="margin-top: 20px">
         <div class="col-md-3">
           <RouterLink
-            :to="{ name: 'StudentNewMessages' }"
+            :to="{ name: 'CoordinatorNewMessages' }"
             class="button2"
             style="width: 250px; height: 55px; margin-left: 40px; text-align: start"
             >New Message</RouterLink
@@ -49,7 +49,7 @@ export default {
                   <i class="bx bx-chevron-down"></i>
                 </div>
                 <ul class="options" ref="options">
-                  <RouterLink :to="{name: 'StudentIncomingMessages'}">
+                  <RouterLink :to="{name: 'CoordinatorIncomingMessages'}">
                   <li class="option">
                     
                     <svg
@@ -75,7 +75,7 @@ export default {
                     <span class="option-text"><small>Incoming Messages</small></span>
                   </li>
                   </RouterLink>
-                  <RouterLink :to="{name: 'StudentOutgoingMessages'}">
+                  <RouterLink :to="{name: 'CoordinatorOutgoingMessages'}">
                   <li class="option">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -206,5 +206,9 @@ export default {
 .option .option-text {
   font-size: 16px;
   color: #333;
+}
+
+svg {
+  color: #0e163d;
 }
 </style>

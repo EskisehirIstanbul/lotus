@@ -1,7 +1,7 @@
 <template>
   <div data-v-e48d1d00="" class="card card-primary card-outline" style="height: 630px">
     <div data-v-e48d1d00="" class="card-header">
-      <h3 data-v-e48d1d00="" class="card-title" style="color: rgb(44, 145, 156)">
+      <h3 data-v-e48d1d00="" class="card-title" style="color: #0c0075">
         Incoming Messages
       </h3>
     </div>
@@ -33,7 +33,7 @@
                   data-v-e48d1d00=""
                   href="#"
                   class="btn btn-sm text-white"
-                  style="background-color: rgb(44, 145, 156)"
+                  style="background-color: #0c0075"
                   ><i data-v-e48d1d00="" class="fa fa-search"></i></a
                 ><a
                   data-v-e48d1d00=""
@@ -67,7 +67,7 @@
                   data-v-e48d1d00=""
                   href="#"
                   class="btn btn-sm text-white"
-                  style="background-color: rgb(44, 145, 156)"
+                  style="background-color: #0c0075"
                   ><i data-v-e48d1d00="" class="fa fa-search"></i></a
                 ><a
                   data-v-e48d1d00=""
@@ -101,7 +101,7 @@
                   data-v-e48d1d00=""
                   href="#"
                   class="btn btn-sm text-white"
-                  style="background-color: rgb(44, 145, 156)"
+                  style="background-color: #0c0075"
                   ><i data-v-e48d1d00="" class="fa fa-search"></i></a
                 ><a
                   data-v-e48d1d00=""
