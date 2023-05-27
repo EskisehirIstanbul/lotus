@@ -121,49 +121,50 @@
               <!-- /.card-header -->
               <div class="card-body p-0">
                 <div class="table-responsive mailbox-messages">
-                  <ul style="list-style: none">
-                    <li
-                      class="noti ps-3"
-                      style="margin-left: -30px; height: 30px; background-color: #d6d6d6"
-                    >
-                      default
-                    </li>
-                    <li
-                      class="noti ps-3"
-                      style="
-                        margin-top: 3px;
-                        margin-left: -30px;
-                        height: 30px;
-                        background-color: #d6d6d6;
-                      "
-                    >
-                      default
-                    </li>
-                    <li
-                      class="noti ps-3"
-                      style="
-                        margin-top: 3px;
-                        margin-left: -30px;
-                        height: 30px;
-                        background-color: #d6d6d6;
-                      "
-                    >
-                      default
-                    </li>
-                    <li
-                      class="noti ps-3"
-                      style="
-                        margin-top: 3px;
-                        margin-left: -30px;
-                        height: 30px;
-                        background-color: #d6d6d6;
-                      "
-                    >
-                      default
-                    </li>
-                  </ul>
                   <table class="table table-striped">
-                    <tbody></tbody>
+                    <tbody>
+                      <ul style="list-style: none">
+                        <li
+                          class="noti ps-3"
+                          style="margin-left: -30px; height: 30px; background-color: #d6d6d6"
+                        >
+                          default
+                        </li>
+                        <li
+                          class="noti ps-3"
+                          style="
+                            margin-top: 3px;
+                            margin-left: -30px;
+                            height: 30px;
+                            background-color: #d6d6d6;
+                          "
+                        >
+                          default
+                        </li>
+                        <li
+                          class="noti ps-3"
+                          style="
+                            margin-top: 3px;
+                            margin-left: -30px;
+                            height: 30px;
+                            background-color: #d6d6d6;
+                          "
+                        >
+                          default
+                        </li>
+                        <li
+                          class="noti ps-3"
+                          style="
+                            margin-top: 3px;
+                            margin-left: -30px;
+                            height: 30px;
+                            background-color: #d6d6d6;
+                          "
+                        >
+                          default
+                        </li>
+                      </ul>
+                    </tbody>
                   </table>
                 </div>
               </div>
