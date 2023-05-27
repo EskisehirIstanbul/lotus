@@ -16,7 +16,6 @@ export default {
       toggle.value.addEventListener('click', () => {
         sidebar.value.classList.toggle('close')
       })
-
     })
     return {
       body,
@@ -35,7 +34,7 @@ export default {
       <header>
         <div class="image-text">
           <span class="image">
-            <img src="../../../assets/images/user.png" alt="">
+            <img src="../../../assets/images/user.png" alt="" />
           </span>
 
           <div class="text logo-text">
@@ -73,7 +72,7 @@ export default {
             <li>
               <RouterLink :to="{ name: 'CoordinatorDocumentProcessing' }">
                 <i class="bx icon bx-upload"></i>
-                <span class="text nav-text">Upload</span>
+                <span class="text nav-text">Uploading</span>
               </RouterLink>
             </li>
           </ul>
@@ -97,7 +96,7 @@ export default {
 </template>
 
 <style scoped>
-@import url("../../../assets/css/coor.css");
+@import url('../../../assets/css/coor.css');
 
 * {
   margin: 0;
@@ -413,8 +412,7 @@ ol {
   padding: 20px;
   border-radius: 10px;
   width: 100%;
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
   height: 320px;
 }
 
