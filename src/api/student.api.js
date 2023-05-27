@@ -1,9 +1,9 @@
-import axios from "axios";
+import axios from 'axios'
 
-export const getStudents = () => {
-  return axios.get("/api/students");
-}
-
-export const getStudent = (username) => {
-  return axios.get(`/api/students/${username}`);
+export const loginStudent = async (username, password) => {
+  const response = await axios.post('http://localhost:8085/student/login', {
+    username,
+    password
+  })
+  return response.data
 }

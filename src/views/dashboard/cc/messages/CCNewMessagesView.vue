@@ -122,6 +122,7 @@
 </template>
 
 <style scoped>
+@import url('../../../../assets/css/style.css');
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 48;
   color: #0e163d;
