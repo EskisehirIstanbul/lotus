@@ -117,25 +117,14 @@
 <style scoped>
 ul,
 ol {
-  padding-left: 0;
+  padding-left: 0%;
 }
-
 .content {
   height: auto;
 }
 
-.btn-inner {
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-inner::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+button {
+  color: white;
 }
 
 .login-form {
@@ -161,12 +150,12 @@ ol {
   margin-bottom: 60px;
 }
 
-/*.text {
-              font-size: 10px;
-              color: #FF9671;
-              font-weight: 600;
-              letter-spacing: 2px;
-            } */
+.text {
+  font-size: 10px;
+  color: #ff9671;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
 
 form {
   margin-top: 50px;
@@ -205,7 +194,7 @@ form button {
 input:focus {
   color: #0e163d;
   /* box-shadow: 0 0 5px rgba(0,255,0,.2), 
-                                inset 0 0 5px rgba(0,255,0,.1);*/
+                      inset 0 0 5px rgba(0,255,0,.1);*/
   background: rgb(176, 164, 164);
   animation: glow 0.8s ease-out infinite alternate;
 }
@@ -213,7 +202,7 @@ input:focus {
 .form-control:focus {
   color: #0e163d;
   /* box-shadow: 0 0 5px rgba(0,255,0,.2), 
-                                inset 0 0 5px rgba(0,255,0,.1);*/
+                      inset 0 0 5px rgba(0,255,0,.1);*/
   background: #dbf6f6;
   animation: glow 0.8s ease-out infinite alternate;
 }
@@ -240,11 +229,11 @@ button {
 }
 
 /* button:hover {
-              color: #2c919c;
-              border: 1px solid #2c919c;
-              /* box-shadow: 0 0 5px rgba(0,255,0,.3),  
-                                0 0 10px rgba(0,255,0,.2),
-                                0 0 15px rgba(0,255,0,.1),
-                                0 2px 0 black;
-            } */
+    color: #2c919c;
+    border: 1px solid #2c919c;
+    /* box-shadow: 0 0 5px rgba(0,255,0,.3),  
+                      0 0 10px rgba(0,255,0,.2),
+                      0 0 15px rgba(0,255,0,.1),
+                      0 2px 0 black;
+  } */
 </style>

@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <div class="row" style="margin-top: 20px">
         <div class="col mx-5">
-          <div class="card card-primary card-outline p-4" style="height: 630px">
+          <div class="card card-primary card-outline p-4" style="height: 90vh">
             <div class="card-header">
               <h3 class="card-title" style="color: #2c919c">Documents</h3>
             </div>
@@ -344,7 +344,7 @@
   padding: 20px;
   border-radius: 10px;
   width: 100%;
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
   height: 320px;
-}</style>
+}
+</style>
