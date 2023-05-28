@@ -1,5 +1,4 @@
 <template>
-  <section class="home">
     <section class="content">
       <div class="container-fluid">
         <div class="rows-2" style="margin-top: 20px">
@@ -96,7 +95,6 @@
       </div>
       <!-- /.row -->
     </section>
-  </section>
 </template>
 <style scoped>
 @import url('../../../../assets/css/style.css');

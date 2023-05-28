@@ -1,5 +1,4 @@
 <template>
-  <section class="home">
     <section class="content">
       <div class="container-fluid">
         <div class="row" style="margin-top: 20px">
@@ -176,7 +175,6 @@
       </div>
       <!-- /.container-fluid -->
     </section>
-  </section>
 </template>
 
 <style scoped>

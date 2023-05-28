@@ -30,7 +30,7 @@
                 <a
                   href="#"
                   onclick="return confirm('You are deleting, if you confirm deletion will be done. This cannot be undone!!');"
-                  class="btn btn-sm btn-danger"
+                  class="btn btn-sm btn-danger" style="margin-left: 3px;"
                   ><i class="fa fa-trash-o"></i
                 ></a>
               </td>
@@ -58,7 +58,7 @@
                 <a
                   href="#"
                   onclick="return confirm('You are deleting, if you confirm deletion will be done. This cannot be undone!!');"
-                  class="btn btn-sm btn-danger"
+                  class="btn btn-sm btn-danger" style="margin-left: 3px;"
                   ><i class="fa fa-trash-o"></i
                 ></a>
               </td>
@@ -86,7 +86,7 @@
                 <a
                   href="#"
                   onclick="return confirm('You are deleting, if you confirm deletion will be done. This cannot be undone!!');"
-                  class="btn btn-sm btn-danger"
+                  class="btn btn-sm btn-danger" style="margin-left: 3px;"
                   ><i class="fa fa-trash-o"></i
                 ></a>
               </td>

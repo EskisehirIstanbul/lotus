@@ -1,10 +1,10 @@
 /* Google Font Import - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 :root {
@@ -269,7 +269,7 @@ body.dark .mode .sun-moon i.moon {
 }
 
 .switch::before {
-  content: '';
+  content: "";
   position: absolute;
   height: 15px;
   width: 15px;
@@ -323,8 +323,6 @@ body.dark .home .text {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/******* HEYOOOO **/
-
 .hdr {
   position: fixed;
   left: 0;
@@ -361,7 +359,8 @@ body.dark .home .text {
 }
 
 .button:hover {
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 .img1 {
   margin-left: 30px;
@@ -374,7 +373,8 @@ body.dark .home .text {
   padding: 20px;
   border-radius: 10px;
   width: 100%;
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
   height: 320px;
 }
 
@@ -392,7 +392,7 @@ body.dark .home .text {
 }
 
 select,
-input[type='number'] {
+input[type="number"] {
   flex-grow: 1;
   padding: 5px;
   height: 50px;
@@ -403,13 +403,30 @@ input[type='number'] {
   border-radius: 4px;
   box-sizing: border-box;
   margin-bottom: 10px;
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .button-container {
   text-align: right;
 }
 
+button {
+  background-color: #0e163d;
+  color: #fff;
+  padding: 8px 16px;
+  width: 40%;
+  border: none;
+
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  color: #0e163d;
+  background-color: #d3ecec;
+}
 .card1 {
   background-color: #f1f1f1;
   width: 300px;
@@ -520,7 +537,8 @@ hr {
 }
 
 .button2:hover {
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 .line {
   width: 100%;
@@ -559,6 +577,7 @@ col-md-3 {
   padding-right: 7.5px;
   padding-left: 7.5px;
 }
+
 
 .col-md-9 {
   position: relative;
@@ -635,7 +654,8 @@ section {
   padding: 20px;
   border-radius: 10px;
   width: 600px;
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
   height: 320px;
   margin-top: 50px;
   margin-left: 50px;

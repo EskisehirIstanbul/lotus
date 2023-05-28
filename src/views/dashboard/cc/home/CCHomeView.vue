@@ -141,5 +141,49 @@
   </div>
 </template>
 <style scoped>
-@import url('../../../../assets/css/style.css');
+.button {
+  background-color: #d3ecec;
+  border: 1px;
+  border-radius: 5px;
+  color: #0e163d;
+  width: 100%;
+  padding: 15px 32px;
+  height: 100px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.card7 {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 10px;
+  width: 600px;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  height: 320px;
+  margin-top: 50px;
+  margin-left: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.card {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  height: 320px;
+}
+
 </style>

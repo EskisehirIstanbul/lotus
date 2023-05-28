@@ -39,7 +39,7 @@
                   data-v-e48d1d00=""
                   href="#"
                   onclick="return confirm('You are deleting, if you confirm deletion will be done. This cannot be undone!!');"
-                  class="btn btn-sm btn-danger"
+                  class="btn btn-sm btn-danger" style="margin-left: 3px;"
                   ><i data-v-e48d1d00="" class="fa fa-trash-o"></i
                 ></a>
               </td>
@@ -73,7 +73,7 @@
                   data-v-e48d1d00=""
                   href="#"
                   onclick="return confirm('You are deleting, if you confirm deletion will be done. This cannot be undone!!');"
-                  class="btn btn-sm btn-danger"
+                  class="btn btn-sm btn-danger" style="margin-left: 3px;"
                   ><i data-v-e48d1d00="" class="fa fa-trash-o"></i
                 ></a>
               </td>
@@ -107,7 +107,7 @@
                   data-v-e48d1d00=""
                   href="#"
                   onclick="return confirm('You are deleting, if you confirm deletion will be done. This cannot be undone!!');"
-                  class="btn btn-sm btn-danger"
+                  class="btn btn-sm btn-danger" style="margin-left: 3px;"
                   ><i data-v-e48d1d00="" class="fa fa-trash-o"></i
                 ></a>
               </td>
@@ -198,7 +198,7 @@ form .field {
   border: 1px solid #444;
   border-right: none;
   border-radius: 5px 0 0 5px;
-  background: linear-gradient(#2b8f9a, #0e163d);
+
 }
 
 .field input,
@@ -211,7 +211,7 @@ form button {
   padding: 0 15px;
   border-radius: 0 5px 5px 0;
 
-  background: linear-gradient(#2b8f9a, #0e163d);
+  
 }
 
 input:focus {

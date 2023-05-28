@@ -23,7 +23,7 @@
         style="right: 5rem"
       >
         <button class="text-white" style="border-radius: 5px; z-index: -1">
-          <RouterLink :to="{ name: 'CCNewMessages' }" style="width: 30px; height: 30px">
+          <RouterLink :to="{ name: 'CCNewMessages' }" style="width: 30px; height: 30px; color: white;">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="icon icon-tabler icon-tabler-mail"

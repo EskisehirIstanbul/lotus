@@ -1,5 +1,4 @@
 <template>
-  <section class="home">
     <section class="content">
       <div class="container-fluid">
         <div class="row" style="margin-top: 20px">
@@ -83,7 +82,7 @@
                                 id="academic_id"
                                 name="academic_id"
                                 data-placeholder="From group section you should choose course or advisory to access the list."
-                                style="width: 100%; box-shadow: none"
+                                style="width: 100%; box-shadow: none; margin-left: -4px;"
                               >
                                 <option value="">Choose one</option>
                                 <option value="58">Doç. Dr. TÜRKER TEKİN ERGÜZEL</option>
@@ -503,7 +502,6 @@
       </div>
       <!-- /.container-fluid -->
     </section>
-  </section>
 </template>
 
 <style scoped>

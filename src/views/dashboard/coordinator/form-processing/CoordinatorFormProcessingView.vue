@@ -1,9 +1,8 @@
 <template>
-  <section class="home">
     <section class="content">
       <div class="container-fluid">
         <div class="row" style="margin-top: 20px; margin-left: 10px; margin-right: 10px">
-          <div class="col">
+          <div class="col" style="margin-left: 20px;">
             <div class="card card-primary card-outline" style="height: auto">
               <div class="card-header">
                 <h3 class="card-title" style="color: #2c919c">Form Processes</h3>
@@ -378,7 +377,6 @@
       </div>
       <!-- /.container-fluid -->
     </section>
-  </section>
 </template>
 <style scoped>
 @import url('../../../../assets/css/coor.css');

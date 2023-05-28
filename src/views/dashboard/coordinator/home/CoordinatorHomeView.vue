@@ -60,7 +60,7 @@
                   <ul style="list-style: none" class="px-4">
                     <li
                       class="noti ps-3"
-                      style="margin-left: -30px; height: 30px; background-color: #d6d6d6"
+                      style="margin-left: -30px; height: 30px;width: 1313px ; background-color: #d6d6d6"
                     >
                       default
                     </li>
@@ -70,6 +70,7 @@
                         margin-top: 3px;
                         margin-left: -30px;
                         height: 30px;
+                        width: 1313px;
                         background-color: #d6d6d6;
                       "
                     >
@@ -81,6 +82,7 @@
                         margin-top: 3px;
                         margin-left: -30px;
                         height: 30px;
+                        width: 1313px;
                         background-color: #d6d6d6;
                       "
                     >
@@ -92,6 +94,7 @@
                         margin-top: 3px;
                         margin-left: -30px;
                         height: 30px;
+                        width: 1313px;
                         background-color: #d6d6d6;
                       "
                     >

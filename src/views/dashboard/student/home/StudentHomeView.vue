@@ -1,5 +1,4 @@
 <template>
-  <section class="home">
     <div class="row" style="margin-left: 10%; margin-right: 10%; margin-top: 30px">
       <div class="col-md-4">
         <div
@@ -188,7 +187,7 @@
         <!-- /.card-footer -->
       </div>
     </div>
-  </section>
+ 
 </template>
 <style scoped>
 @import url('../../../../assets/css/student.css');
