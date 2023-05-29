@@ -226,6 +226,10 @@ const router = createRouter({
           component: CCNewOpportunityView
         }
       ]
+    },
+    {
+      path: '/:catchAll(.*)*',
+      redirect: { name: 'LoginNavigation' }
     }
   ]
 })

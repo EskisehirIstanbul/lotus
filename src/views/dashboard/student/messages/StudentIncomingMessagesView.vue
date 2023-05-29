@@ -1,3 +1,29 @@
+<script>
+import { onMounted, ref } from 'vue'
+import useMessagesStore from '../../../../stores/messages.store'
+import useStudentStore from '../../../../stores/student.store'
+import MessageDetails from '../../../../components/MessageDetails.vue'
+
+export default {
+  components: { MessageDetails },
+  setup() {
+    const messagesStore = useMessagesStore()
+    const studentStore = useStudentStore()
+
+    const messages = ref([])
+
+    onMounted(async () => {
+      const mail = await studentStore.student.email
+      messages.value = await messagesStore.setMessages(mail)
+    })
+
+    return {
+      messages
+    }
+  }
+}
+</script>
+
 <template>
   <div data-v-e48d1d00="" class="card card-primary card-outline" style="height: 630px">
     <div data-v-e48d1d00="" class="card-header">
@@ -10,108 +36,7 @@
       <div data-v-e48d1d00="" class="table-responsive mailbox-messages">
         <table data-v-e48d1d00="" class="table table-striped">
           <tbody data-v-e48d1d00="">
-            <tr data-v-e48d1d00="" class="new-message">
-              <td data-v-e48d1d00="" width="50"></td>
-              <td data-v-e48d1d00="" width="50">
-                <img
-                  data-v-e48d1d00=""
-                  src="https://obs.uskudar.edu.tr/oibs/zfoto.aspx?gkm=10113315036324363123734334228373363845635250342003630634224"
-                  alt=""
-                  height="50"
-                />
-              </td>
-              <td data-v-e48d1d00="" class="mailbox-name">
-                Dr. Öğr. Üyesi KRİSTİN SURPUHİ BENLİ<br
-                  data-v-e48d1d00=""
-                />(kristin.benli@uskudar.edu.tr)
-              </td>
-              <td data-v-e48d1d00="" class="mailbox-subject">About</td>
-              <td data-v-e48d1d00="" class="mailbox-attachment"></td>
-              <td data-v-e48d1d00="" class="mailbox-date">1 week ago</td>
-              <td data-v-e48d1d00="" width="100">
-                <a
-                  data-v-e48d1d00=""
-                  href="#"
-                  class="btn btn-sm text-white"
-                  style="background-color: rgb(44, 145, 156)"
-                  ><i data-v-e48d1d00="" class="fa fa-search"></i></a
-                ><a
-                  data-v-e48d1d00=""
-                  href="#"
-                  onclick="return confirm('You are deleting, if you confirm deletion will be done. This cannot be undone!!');"
-                  class="btn btn-sm btn-danger" style="margin-left: 3px;"
-                  ><i data-v-e48d1d00="" class="fa fa-trash-o"></i
-                ></a>
-              </td>
-            </tr>
-            <tr data-v-e48d1d00="">
-              <td data-v-e48d1d00="" width="50"></td>
-              <td data-v-e48d1d00="" width="50">
-                <img
-                  data-v-e48d1d00=""
-                  src="https://obs.uskudar.edu.tr/oibs/zfoto.aspx?gkm=10113315036324363123734334228373363845635250342003630634224"
-                  alt=""
-                  height="50"
-                />
-              </td>
-              <td data-v-e48d1d00="" class="mailbox-name">
-                Dr. Öğr. Üyesi KRİSTİN SURPUHİ BENLİ<br
-                  data-v-e48d1d00=""
-                />(kristin.benli@uskudar.edu.tr)
-              </td>
-              <td data-v-e48d1d00="" class="mailbox-subject">About</td>
-              <td data-v-e48d1d00="" class="mailbox-attachment"></td>
-              <td data-v-e48d1d00="" class="mailbox-date">1 week ago</td>
-              <td data-v-e48d1d00="" width="100">
-                <a
-                  data-v-e48d1d00=""
-                  href="#"
-                  class="btn btn-sm text-white"
-                  style="background-color: rgb(44, 145, 156)"
-                  ><i data-v-e48d1d00="" class="fa fa-search"></i></a
-                ><a
-                  data-v-e48d1d00=""
-                  href="#"
-                  onclick="return confirm('You are deleting, if you confirm deletion will be done. This cannot be undone!!');"
-                  class="btn btn-sm btn-danger" style="margin-left: 3px;"
-                  ><i data-v-e48d1d00="" class="fa fa-trash-o"></i
-                ></a>
-              </td>
-            </tr>
-            <tr data-v-e48d1d00="">
-              <td data-v-e48d1d00="" width="50"></td>
-              <td data-v-e48d1d00="" width="50">
-                <img
-                  data-v-e48d1d00=""
-                  src="https://obs.uskudar.edu.tr/oibs/zfoto.aspx?gkm=10113315036324363123734334228373363845635250342003630634224"
-                  alt=""
-                  height="50"
-                />
-              </td>
-              <td data-v-e48d1d00="" class="mailbox-name">
-                Dr. Öğr. Üyesi KRİSTİN SURPUHİ BENLİ<br
-                  data-v-e48d1d00=""
-                />(kristin.benli@uskudar.edu.tr)
-              </td>
-              <td data-v-e48d1d00="" class="mailbox-subject">About</td>
-              <td data-v-e48d1d00="" class="mailbox-attachment"></td>
-              <td data-v-e48d1d00="" class="mailbox-date">2 weeks ago</td>
-              <td data-v-e48d1d00="" width="100">
-                <a
-                  data-v-e48d1d00=""
-                  href="#"
-                  class="btn btn-sm text-white"
-                  style="background-color: rgb(44, 145, 156)"
-                  ><i data-v-e48d1d00="" class="fa fa-search"></i></a
-                ><a
-                  data-v-e48d1d00=""
-                  href="#"
-                  onclick="return confirm('You are deleting, if you confirm deletion will be done. This cannot be undone!!');"
-                  class="btn btn-sm btn-danger" style="margin-left: 3px;"
-                  ><i data-v-e48d1d00="" class="fa fa-trash-o"></i
-                ></a>
-              </td>
-            </tr>
+            <MessageDetails v-for="message in messages" :key="message.id" :message="message" />
           </tbody>
         </table>
       </div>
@@ -198,7 +123,6 @@ form .field {
   border: 1px solid #444;
   border-right: none;
   border-radius: 5px 0 0 5px;
-
 }
 
 .field input,
@@ -210,8 +134,6 @@ form button {
   color: #fff;
   padding: 0 15px;
   border-radius: 0 5px 5px 0;
-
-  
 }
 
 input:focus {

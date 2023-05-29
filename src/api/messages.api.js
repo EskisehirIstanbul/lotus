@@ -5,6 +5,12 @@ export const getMessages = async () => {
   return response.data
 }
 
+export const getMessageByEmail = async (email) => {
+  const response = await axios.get(`http://localhost:8085/messageTo/${email}`)
+  console.log(response.data)
+  return response.data
+}
+
 export const createMessage = async (message) => {
   const response = await axios.post(
     'http://localhost:8085/messages',

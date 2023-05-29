@@ -1,6 +1,8 @@
 <script>
 import { ref, onMounted } from 'vue'
 import { RouterLink } from 'vue-router'
+import useStudentStore from '../../../stores/student.store'
+import { useRouter } from 'vue-router'
 
 export default {
   setup() {
@@ -8,6 +10,19 @@ export default {
     const sidebar = ref(null)
     const toggle = ref(null)
     const modeText = ref(null)
+
+    const studentStore = useStudentStore()
+    const router = useRouter()
+
+    if (!studentStore.isStudentLoggedIn) {
+      router.push({ name: 'LoginNavigation' })
+    }
+
+    function logout() {
+      studentStore.logoutStudent()
+      router.push({ name: 'LoginNavigation' })
+    }
+
     onMounted(() => {
       body.value = document.querySelector('body')
       sidebar.value = body.value.querySelector('nav')
@@ -16,13 +31,13 @@ export default {
       toggle.value.addEventListener('click', () => {
         sidebar.value.classList.toggle('close')
       })
-
     })
     return {
       body,
       sidebar,
       toggle,
-      modeText
+      modeText,
+      logout
     }
   },
   components: { RouterLink }
@@ -35,7 +50,7 @@ export default {
       <header>
         <div class="image-text">
           <span class="image">
-            <img src="../../../assets/images/user.png" alt="">
+            <img src="../../../assets/images/user.png" alt="" />
           </span>
 
           <div class="text logo-text">
@@ -81,7 +96,7 @@ export default {
 
         <div class="bottom-content">
           <li class="">
-            <a href="#">
+            <a href="#" @click.prevent="logout">
               <i class="bx bx-log-out icon"></i>
               <span class="text nav-text">Logout</span>
             </a>
@@ -97,7 +112,6 @@ export default {
 </template>
 
 <style scoped>
-
 * {
   margin: 0;
   padding: 0;
@@ -412,8 +426,7 @@ ol {
   padding: 20px;
   border-radius: 10px;
   width: 100%;
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
   height: 320px;
 }
 

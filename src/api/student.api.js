@@ -5,5 +5,10 @@ export const loginStudent = async (username, password) => {
     username,
     password
   })
+  return response.status
+}
+
+export const getStudentById = async (id) => {
+  const response = await axios.get(`http://localhost:8085/student/${id}`)
   return response.data
 }

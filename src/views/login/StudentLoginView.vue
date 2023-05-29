@@ -1,56 +1,72 @@
 <script setup>
-
 import { ref } from 'vue'
 import AppBackground from '../../components/AppBackground.vue'
+import useStudentStore from '../../stores/student.store'
+import { useRouter } from 'vue-router'
+
+const studentStore = useStudentStore()
+const router = useRouter()
 
 const studentId = ref('')
 const password = ref('')
 
-function submit() {
+async function submit() {
   if (studentId.value === '' || password.value === '') {
     alert('Please fill all the fields')
   } else {
-    const data = {
-      studentId: studentId.value,
-      password: password.value
-    }
+    const data = await studentStore.setStudent(studentId.value, password.value)
     console.log(data)
-    studentId.value = ''
-    password.value = ''
+    if (data) {
+      router.push({ name: 'StudentDashboard' })
+    } else {
+      alert('Invalid student id or password')
+    }
   }
 }
-
 </script>
 
 <template>
-  <div class="container cnt d-flex justify-content-center align-items-center" style="height:100vh">
+  <div class="container cnt d-flex justify-content-center align-items-center" style="height: 100vh">
     <AppBackground />
-  <div class="c">
-    <div class="container-label text-center">
-      <div>
-        <img
-          src="../../assets/images/uskudar-universitesi-logo.png"
-          alt="Logo"
-          class="img-fluid"
-          style="width: 10rem; height: 10rem"
-        />
+    <div class="c">
+      <div class="container-label text-center">
+        <div>
+          <img
+            src="../../assets/images/uskudar-universitesi-logo.png"
+            alt="Logo"
+            class="img-fluid"
+            style="width: 10rem; height: 10rem"
+          />
+        </div>
+        <br />Student Login
       </div>
-      <br />Student Login
-    </div>
 
-    <div class="container-form">
-      <form @submit.prevent="submit">
-        <label for="stId">Student Id</label>
-        <input type="text" id="stId" placeholder="Enter your student id" autofocus required v-model="studentId" />
+      <div class="container-form">
+        <form @submit.prevent="submit">
+          <label for="stId">Student Id</label>
+          <input
+            type="text"
+            id="stId"
+            placeholder="Enter your student id"
+            autofocus
+            required
+            v-model="studentId"
+          />
 
-        <label for="password" class="mt-2">Password</label>
-        <input type="password" id="password" placeholder="Enter your password" required v-model="password" />
+          <label for="password" class="mt-2">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            required
+            v-model="password"
+          />
 
-        <button type="submit">Submit</button>
-      </form>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </div>
   </div>
-</div>
 </template>
 
 <style scoped>
@@ -166,6 +182,4 @@ function submit() {
   border-color: rgb(22, 30, 72);
   outline: none !important;
 }
-
-
 </style>
