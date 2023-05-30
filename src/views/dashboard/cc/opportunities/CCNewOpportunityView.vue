@@ -83,7 +83,9 @@
             border: none;
           "
         >
-          <button
+          <input
+            type="file"
+            accept="image/*"
             style="
               background-color: #a6ccd1;
               border-radius: 5px;
@@ -91,9 +93,8 @@
               height: 7vh;
               width: 40%;
             "
-          >
-            Select Image
-          </button>
+          />
+
           <p style="padding-left: 4%; margin-top: 3%">No file selected</p>
         </div>
       </div>

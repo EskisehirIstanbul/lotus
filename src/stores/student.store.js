@@ -1,7 +1,7 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 import { loginStudent, getStudentById } from '../api/student.api'
-
+// loginCoordinator ,getCoordinatorById 
 export default defineStore('student', () => {
   const student = ref(null)
 

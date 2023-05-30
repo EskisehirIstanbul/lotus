@@ -2,7 +2,12 @@
 import { onMounted, ref } from 'vue'
 import useMessagesStore from '../../../../stores/messages.store'
 import useStudentStore from '../../../../stores/student.store'
+//useCoordinatorStore stora ekle
 import MessageDetails from '../../../../components/MessageDetails.vue'
+
+import MessageRow from '../../../../components/MessageRow.vue'
+
+const Student = 'Student'
 
 export default {
   components: { MessageDetails },
@@ -36,7 +41,11 @@ export default {
       <div data-v-e48d1d00="" class="table-responsive mailbox-messages">
         <table data-v-e48d1d00="" class="table table-striped">
           <tbody data-v-e48d1d00="">
-            <MessageDetails v-for="message in messages" :key="message.id" :message="message" />
+            <MessageRow :typ="Student" />
+            <MessageRow :typ="Student" />
+            <MessageRow :typ="Student" />
+            <MessageRow :typ="Student" />
+            <MessageRow :typ="Student" />
           </tbody>
         </table>
       </div>
