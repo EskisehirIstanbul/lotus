@@ -1,5 +1,5 @@
 <script setup>
-import MessageRow from '../../../../components/MessageRow.vue'
+import MessageRow from '../../../../components/MessageDetails.vue'
 
 const Coordinator = 'CareerCenter'
 </script>

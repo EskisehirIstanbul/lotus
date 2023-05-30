@@ -1,7 +1,30 @@
-<script setup>
-import MessageRow from '../../../../components/MessageRow.vue'
+<script>
+import { onMounted, ref } from 'vue'
+import useMessagesStore from '../../../../stores/messages.store'
+import useStudentStore from '../../../../stores/student.store'
 
-const Student = 'Student'
+import MessageDetails from '../../../../components/MessageDetails.vue'
+
+export default {
+  components: { MessageDetails },
+  setup() {
+    const messagesStore = useMessagesStore()
+    const studentStore = useStudentStore()
+    const Student = 'Student'
+
+    const messages = ref([])
+
+    onMounted(async () => {
+      const mail = await studentStore.student.email
+      messages.value = await messagesStore.setMessagesOutgoing(mail)
+    })
+
+    return {
+      messages,
+      Student
+    }
+  }
+}
 </script>
 <template>
   <div class="card card-primary card-outline" style="height: 630px">
@@ -13,20 +36,20 @@ const Student = 'Student'
       <div data-v-e48d1d00="" class="table-responsive mailbox-messages">
         <table data-v-e48d1d00="" class="table table-striped">
           <tbody data-v-e48d1d00="">
-            <MessageRow :typ="Student" />
-            <MessageRow :typ="Student" />
-            <MessageRow :typ="Student" />
-            <MessageRow :typ="Student" />
-            <MessageRow :typ="Student" />
+            <MessageDetails
+              v-for="message in messages"
+              :key="message.id"
+              :message="message"
+              :typ="Student"
+            />
           </tbody>
         </table>
       </div>
     </div>
-    <!-- /.card-body -->
+    +
     <div class="card-footer p-0">
       <div class="mailbox-controls"></div>
     </div>
-    <!-- /.card-footer -->
   </div>
 </template>
 <style scoped>

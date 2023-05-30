@@ -1,3 +1,23 @@
+<script>
+import { useRouter } from 'vue-router'
+
+export default {
+  setup() {
+    const router = useRouter()
+
+    const goBack = () => {
+      router.go(-1)
+    }
+
+    return {
+      goBack
+    }
+  }
+}
+
+</script>
+
+
 <template>
     <section class="content">
       <div class="container-fluid">
@@ -6,8 +26,7 @@
             <div class="col-md-9">
               <button
                 class="btn btn-inner btnBack backIcon col-2 mb-3"
-                onclick="goBack()"
-                onmousedown="disableOutline()"
+                @click.prevent="goBack()"
                 style="width: 100px; padding-left: 3px; padding-right: 12px; margin-left: 55px"
               >
                 <svg

@@ -1,26 +1,39 @@
 <script>
 import { ref } from 'vue'
+import { RouterLink } from 'vue-router'
+import { deleteMessageById } from '../api/messages.api';
 
 export default {
-  name: 'MessageDetails',
-  props: {
-    message: {
-      type: String,
-      required: true
-    }
-  },
-  setup(props) {
-    console.log(props.message)
+    name: "MessageDetails",
+    props: {
+        message: {
+            type: String,
+            required: true
+        },
+        typ: {
+            type: String,
+            required: true
+        }
+    },
+    setup(props) {
+        const messageDetails = ref(props.message);
+        const routeType = ref(props.typ);
+        console.log(messageDetails.value);
 
-    const messageDetails = ref(props.message)
+        const deleteMessage = async (id) => {
+          const confirmDelete = confirm('Are you sure you want to delete this message?');
 
-    console.log(messageDetails.value)
+          if (confirmDelete)  await deleteMessageById(id);
+          else return;
+        }
 
-
-    return {
-      messageDetails
-    }
-  }
+        return {
+            messageDetails,
+            routeType,
+            deleteMessage
+        };
+    },
+    components: { RouterLink }
 }
 </script>
 
@@ -46,16 +59,17 @@ export default {
     <td data-v-e48d1d00="" class="mailbox-date">{{ messageDetails?.time }}</td>
 
     <td data-v-e48d1d00="" width="100">
-      <a
+      <RouterLink
+        :to="{ name: `${routeType}MessageDetails`, params: { id: messageDetails?.id } }"
         data-v-e48d1d00=""
         href="#"
         class="btn btn-sm text-white"
         style="background-color: rgb(44, 145, 156)"
-        ><i data-v-e48d1d00="" class="fa fa-search"></i></a
+        ><i data-v-e48d1d00="" class="fa fa-search"></i></RouterLink
       ><a
         data-v-e48d1d00=""
         href="#"
-        onclick="return confirm('You are deleting, if you confirm deletion will be done. This cannot be undone!!');"
+        @click="deleteMessage(messageDetails?.id)"
         class="btn btn-sm btn-danger"
         style="margin-left: 3px"
         ><i data-v-e48d1d00="" class="fa fa-trash-o"></i

@@ -1,3 +1,1 @@
-<template>
-  message details
-</template>
+<template>cc</template>

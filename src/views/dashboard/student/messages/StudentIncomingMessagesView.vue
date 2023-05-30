@@ -2,28 +2,26 @@
 import { onMounted, ref } from 'vue'
 import useMessagesStore from '../../../../stores/messages.store'
 import useStudentStore from '../../../../stores/student.store'
-//useCoordinatorStore stora ekle
+
 import MessageDetails from '../../../../components/MessageDetails.vue'
-
-import MessageRow from '../../../../components/MessageRow.vue'
-
-const Student = 'Student'
 
 export default {
   components: { MessageDetails },
   setup() {
     const messagesStore = useMessagesStore()
     const studentStore = useStudentStore()
+    const Student = 'Student'
 
     const messages = ref([])
 
     onMounted(async () => {
       const mail = await studentStore.student.email
-      messages.value = await messagesStore.setMessages(mail)
+      messages.value = await messagesStore.setMessagesIncoming(mail)
     })
 
     return {
-      messages
+      messages,
+      Student
     }
   }
 }
@@ -41,11 +39,12 @@ export default {
       <div data-v-e48d1d00="" class="table-responsive mailbox-messages">
         <table data-v-e48d1d00="" class="table table-striped">
           <tbody data-v-e48d1d00="">
-            <MessageRow :typ="Student" />
-            <MessageRow :typ="Student" />
-            <MessageRow :typ="Student" />
-            <MessageRow :typ="Student" />
-            <MessageRow :typ="Student" />
+            <MessageDetails
+              v-for="message in messages"
+              :key="message.id"
+              :message="message"
+              :typ="Student"
+            />
           </tbody>
         </table>
       </div>

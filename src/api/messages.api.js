@@ -5,11 +5,27 @@ export const getMessages = async () => {
   return response.data
 }
 
-export const getMessageByEmail = async (email) => {
+export const getMessageByEmailTo = async (email) => {
   const response = await axios.get(`http://localhost:8085/messageTo/${email}`)
-  console.log(response.data)
   return response.data
 }
+
+export const getMessageByEmailFrom = async (email) => {
+  const response = await axios.get(`http://localhost:8085/messageFrom/${email}`)
+  return response.data
+}
+
+export const getMessageById = async (id) => {
+  const response = await axios.get(`http://localhost:8085/message/${id}`)
+  return response.data
+}
+
+export const deleteMessageById = async (id) => {
+  const response = await axios.delete(`http://localhost:8085/messages/${id}`)
+  return response.data
+}
+
+
 
 export const createMessage = async (message) => {
   const response = await axios.post(

@@ -12,8 +12,11 @@ import StudentMessagesView from '../views/dashboard/student/messages/StudentMess
 import StudentNewMessagesView from '../views/dashboard/student/messages/StudentNewMessagesView.vue'
 import StudentIncomingMessagesView from '../views/dashboard/student/messages/StudentIncomingMessagesView.vue'
 import StudentOutgoingMessagesView from '../views/dashboard/student/messages/StudentOutgoingMessagesView.vue'
+import StudentMessageDetailsView from '../views/dashboard/student/messages/StudentMessageDetailsView.vue'
 
 import StudentOpportunitiesView from '../views/dashboard/student/opportunities/StudentOpportunitiesView.vue'
+import StudentOpportunityDetailsView from '../views/dashboard/student/opportunities/StudentOpportunityDetailsView.vue'
+
 import CoordinatorDashboardView from '../views/dashboard/coordinator/CoordinatorDashboardView.vue'
 import CoordinatorHomeView from '../views/dashboard/coordinator/home/CoordinatorHomeView.vue'
 import CoordinatorMessagesView from '../views/dashboard/coordinator/messages/CoordinatorMessagesView.vue'
@@ -22,6 +25,7 @@ import CoordinatorIncomingMessagesView from '../views/dashboard/coordinator/mess
 import CoordinatorOutgoingMessagesView from '../views/dashboard/coordinator/messages/CoordinatorOutgoingMessagesView.vue'
 import CoordinatorFormProcessingView from '../views/dashboard/coordinator/form-processing/CoordinatorFormProcessingView.vue'
 import CoordinatorDocumentProcessingView from '../views/dashboard/coordinator/document-processing/CoordinatorDocumentProcessingView.vue'
+import CoordinatorMessageDetailsView from '../views/dashboard/coordinator/messages/CoordinatorMessageDetailsView.vue'
 
 import AdminDashboardView from '../views/dashboard/admin/AdminDashboardView.vue'
 import AdminAssignCoordView from '../views/dashboard/admin/assign/AdminAssignCoordView.vue'
@@ -102,6 +106,11 @@ const router = createRouter({
               path: 'outgoing',
               name: 'StudentOutgoingMessages',
               component: StudentOutgoingMessagesView
+            },
+            {
+              path: 'details/:id',
+              name: 'StudentMessageDetails',
+              component: StudentMessageDetailsView
             }
           ]
         },
@@ -109,6 +118,11 @@ const router = createRouter({
           path: 'opportunities',
           name: 'StudentOpportunities',
           component: StudentOpportunitiesView
+        },
+        {
+          path: 'opportunity-details/:id',
+          name: 'StudentOpportunityDetails',
+          component: StudentOpportunityDetailsView
         }
       ]
     },
@@ -141,6 +155,11 @@ const router = createRouter({
               path: 'outgoing',
               name: 'CoordinatorOutgoingMessages',
               component: CoordinatorOutgoingMessagesView
+            },
+            {
+              path: 'details/:id',
+              name: 'CoordinatorMessageDetails',
+              component: CoordinatorMessageDetailsView
             }
           ]
         },
@@ -209,7 +228,7 @@ const router = createRouter({
               component: CCOutgoingMessagesView
             },
             {
-              path: 'details',
+              path: 'details/:id',
               name: 'CCMessageDetails',
               component: CCMessageDetailsView
             }
