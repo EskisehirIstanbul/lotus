@@ -85,7 +85,7 @@ export default {
                 "
               >
                 <div class="card-header" style="background-color: #b0dbdb">
-                  <img src="images/user.png" alt="" />
+                  <img src="../../../../assets/images/user.png" alt="" />
                   <span style="margin-left: 10px">Company Name</span>
                   <div style="margin-left: 80px">Location</div>
                 </div>
@@ -116,7 +116,6 @@ export default {
     </section>
 </template>
 <style scoped>
-@import url('../../../../assets/css/style.css');
 .btn-inner {
   position: relative;
   overflow: hidden;
@@ -155,7 +154,23 @@ export default {
 ul,
 ol {
   padding-left: 0%;
+}button {
+  background-color: #0e163d;
+  color: #fff;
+  padding: 8px 16px;
+  width: 40%;
+  border: none;
+
+  cursor: pointer;
 }
+
+button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  color: white;
+  background-color: #d3ecec;
+}
+
 
 .content {
   height: auto;

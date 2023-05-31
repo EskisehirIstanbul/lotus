@@ -6,42 +6,19 @@
           <form style="margin-top: 0%"></form>
           <input type="hidden" name="" />
 
-          <div class="card-body" style="height: 420px; color: #1b6068">
+          <div class="card-body" style="height: 350px; color: #1b6068">
             <div class="form-group mb-2">
-              <label for="academic_id">Contacts:</label>
-              <select
+              <div class="form-group mb-2">
+              <label for="contacts">Contacts:</label>
+              <input
+                type="text"
                 class="form-control"
-                id="academic_id"
-                name="academic_id"
-                data-placeholder="From group section you should choose course or advisory to access the list."
-                style="width: 100%; box-shadow: none"
-              >
-                <option value="">Choose one</option>
-                <option value="58">Doç. Dr. TÜRKER TEKİN ERGÜZEL</option>
-                <option value="262">Dr. Öğr. Üyesi KRİSTİN SURPUHİ BENLİ</option>
-                <option value="22141">Prof. Dr. BURHAN PEKTAŞ</option>
-                <option value="40299">Dr. Öğr. Üyesi BELAYNESH CHEKOL</option>
-                <option value="51871">Dr. Öğr. Üyesi GAMZE USLU</option>
-                <option value="60273">Öğr. Gör. GÜLSÜN GENCER</option>
-              </select>
+                name="contacts"
+                id="contacts"
+                placeholder="contacts"
+                value=""
+              />
             </div>
-            <div class="form-group mb-2">
-              <label for="course_id">Course:</label>
-              <select
-                class="form-control"
-                id="course_id"
-                name="course_id"
-                data-placeholder="From group section you should choose course or advisory to access the list."
-                style="width: 100%; box-shadow: none"
-              >
-                <option value="">Choose one</option>
-                <option value="23114">Image Processing&nbsp;(COME407/1)</option>
-                <option value="23206">German II&nbsp;(GER124/2)</option>
-                <option value="23343">Numerical Analysis&nbsp;(MATH302/1)</option>
-                <option value="23344">Software Project Management&nbsp;(SE302/1)</option>
-                <option value="23345">Summer Practice II&nbsp;(SE384/1)</option>
-                <option value="23342">Emerging Technologies&nbsp;(SE406/1)</option>
-              </select>
             </div>
             <div class="form-group mb-2">
               <label for="subject">Subject:</label>
@@ -115,27 +92,17 @@
 </template>
 
 <style scoped>
-
-button {
-  background-color: #0e163d;
-  color: #fff;
-  padding: 8px 16px;
-  width: 40%;
-  border: none;
-
-  cursor: pointer;
-}
-
-button:hover {
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
-  color: #0e163d;
-  background-color: #d3ecec;
+ul,
+ol {
+  padding-left: 0%;
 }
 .content {
   height: auto;
 }
 
+button {
+  color: white;
+}
 
 .login-form {
   position: relative;
@@ -185,10 +152,11 @@ form .field {
   border: 1px solid #444;
   border-right: none;
   border-radius: 5px 0 0 5px;
- 
+  background: linear-gradient(#2b8f9a, #0e163d);
 }
 
-.field input {
+.field input,
+form button {
   height: 30px;
   width: 100%;
   outline: none;
@@ -197,7 +165,7 @@ form .field {
   padding: 0 15px;
   border-radius: 0 5px 5px 0;
 
-  
+  background: linear-gradient(#2b8f9a, #0e163d);
 }
 
 input:focus {
@@ -228,7 +196,14 @@ input:focus {
   }
 }
 
+button {
+  margin-top: 10px;
+  border-radius: 5px !important;
 
+  letter-spacing: 1px;
+  cursor: pointer;
+  background: linear-gradient(#2b8f9a, #0e163d);
+}
 
 /* button:hover {
     color: #2c919c;
