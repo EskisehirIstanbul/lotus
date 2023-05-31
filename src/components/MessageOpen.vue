@@ -69,7 +69,7 @@ export default {
                         <td width="50"></td>
                         <td width="40" style="padding-bottom: 5rem !important">
                           <img
-                            src="../../../../assets/images/user.png"
+                            src="../assets/images/user.png"
                             alt=""
                             height="40"
                             style="margin-top: -8px"
@@ -129,34 +129,9 @@ export default {
                               class="mailbox-attachment-name text-decoration-none text-reset"
                               ><i class="fa fa-paperclip"></i> Document.pdf</a
                             >
-                            <div class="float-right">
-                              <a
-                                href="#"
-                                class="btn btn-default btn-inner btn-sm"
-                                target="_blank"
-                                onmousedown="disableOutline()"
-                                ><small
-                                  ><small>
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      class="icon icon-tabler icon-tabler-eye"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      stroke-width="2"
-                                      stroke="currentColor"
-                                      fill="none"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                    >
-                                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
-                                      <path
-                                        d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"
-                                      ></path>
-                                    </svg> </small></small
-                              ></a>
-                              <a href="#" class="btn btn-default bttn-inner btn-sm"
+                           
+                              
+                              <a href="#" class="btn btn-default bttn-inner btn-sm" style="margin-left: 40vb;"
                                 ><small
                                   ><small>
                                     <svg
@@ -177,7 +152,7 @@ export default {
                                       <path d="M12 4l0 12"></path>
                                     </svg> </small></small
                               ></a>
-                            </div>
+                            
                           </div>
                         </li>
                       </ul>
@@ -226,6 +201,18 @@ ol {
 .content {
   height: auto;
 }
-@import url('../../../../assets/css/coor.css');
-@import url('../../../../assets/css/style.css');
+.docBack{
+    background-color: #d5f2f2;
+    border-radius: 6px;
+}
+
+.card {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  height: 320px;
+}
 </style>
