@@ -127,9 +127,7 @@
                   <td class="mailbox-attachment"></td>
                   <td class="mailbox-date">1 hafta önce</td>
                   <td width="100">
-                    <a href="#" class="btn btn-sm text-white" style="background-color: #2c919c"
-                      ><i class="fa fa-search"></i
-                    ></a>
+                    
                   </td>
                 </tr>
 
@@ -149,9 +147,7 @@
                   <td class="mailbox-attachment"></td>
                   <td class="mailbox-date">1 hafta önce</td>
                   <td width="100">
-                    <a href="#" class="btn btn-sm text-white" style="background-color: #2c919c"
-                      ><i class="fa fa-search"></i
-                    ></a>
+                  
                   </td>
                 </tr>
 
@@ -171,9 +167,7 @@
                   <td class="mailbox-attachment"></td>
                   <td class="mailbox-date">2 hafta önce</td>
                   <td width="100">
-                    <a href="#" class="btn btn-sm text-white" style="background-color: #2c919c"
-                      ><i class="fa fa-search"></i
-                    ></a>
+                  
                   </td>
                 </tr>
               </tbody>
