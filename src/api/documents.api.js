@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { doc } from 'prettier'
 
 export const getDocuments = async () => {
   const response = await axios.get('http://localhost:8085/documents')
@@ -11,7 +10,7 @@ export const createDocument = async (document) => {
     'http://localhost:8085/documents',
 
     {
-      titfile_name: document.file_name,
+      file_name: document.file_name,
       file_data: 'desktop/n.pdf'
     }
   )
