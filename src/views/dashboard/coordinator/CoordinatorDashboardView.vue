@@ -1,6 +1,8 @@
 <script>
 import { ref, onMounted } from 'vue'
 import { RouterLink } from 'vue-router'
+import useCoordinatorStore from '../../../stores/coordinator.store'
+import { useRouter } from 'vue-router'
 
 export default {
   setup() {
@@ -8,7 +10,21 @@ export default {
     const sidebar = ref(null)
     const toggle = ref(null)
     const modeText = ref(null)
+    const coordinatorStore = useCoordinatorStore()
+    const router = useRouter()
+    const coordinator = ref(null)
+
+    if (!coordinatorStore.isCoordinatorLoggedIn) {
+      router.push({ name: 'LoginNavigation' })
+    }
+
+    function logout() {
+      coordinatorStore.logoutCoordinator()
+      router.push({ name: 'LoginNavigation' })
+    }
+
     onMounted(() => {
+      
       body.value = document.querySelector('body')
       sidebar.value = body.value.querySelector('nav')
       toggle.value = body.value.querySelector('.toggle')
@@ -16,12 +32,16 @@ export default {
       toggle.value.addEventListener('click', () => {
         sidebar.value.classList.toggle('close')
       })
+
+      coordinator.value = coordinatorStore.coordinator
     })
     return {
       body,
       sidebar,
       toggle,
-      modeText
+      modeText,
+      logout,
+      coordinator
     }
   },
   components: { RouterLink }
@@ -39,7 +59,10 @@ export default {
 
           <div class="text logo-text">
             <span class="name">LOTUS</span>
-            <span class="profession">Coordinator Panel</span>
+            <span class="profession">
+              
+              {{ coordinator?.name }}
+            </span>
           </div>
         </div>
 
@@ -80,7 +103,7 @@ export default {
 
         <div class="bottom-content">
           <li class="">
-            <a href="#">
+            <a href="#" @click.prevent="logout()">
               <i class="bx bx-log-out icon"></i>
               <span class="text nav-text">Logout</span>
             </a>

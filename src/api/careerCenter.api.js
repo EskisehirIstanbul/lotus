@@ -5,7 +5,7 @@ export const loginCareerCenter = async (username, password) => {
     username,
     password
   })
-  return response.data
+  return response.status
 }
 
 export const assignCareerCenter = async (username) => {

@@ -5,7 +5,7 @@ export const loginAdmin = async (username, password) => {
     username,
     password
   })
-  return response.data
+  return response.status
 }
 export const getAdminById = async (id) => {
   const response = await axios.get(`http://localhost:8085/admin/${id}`)

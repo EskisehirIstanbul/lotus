@@ -1,16 +1,16 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
-import { getCareerCenterById } from '../api/careerCenter.api'
+import { getCareerCenterById, loginCareerCenter } from '../api/careerCenter.api'
 // loginCoordinator ,getCoordinatorById
 export default defineStore('careerCenter', () => {
   const staff = ref(null)
 
   const setCareerCenter = async (username, password) => {
-    password
-    try {
+    const status = await loginCareerCenter(username, password)
+
+    if (status === 200) {
       staff.value = await getCareerCenterById(username)
-      console.log(staff.value)
-    } catch (error) {
+    } else {
       staff.value = null
     }
 
