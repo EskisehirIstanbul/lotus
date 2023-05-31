@@ -2,21 +2,25 @@
 
 import AppBackground from '../../components/AppBackground.vue'
 import { ref } from 'vue'
+import useAdminStore from '../../stores/admin.store'
+import { useRouter } from 'vue-router'
 
 const adminId = ref('')
 const password = ref('')
+const adminStore = useAdminStore()
+const router = useRouter()
 
-function submit() {
+async function submit() {
   if (adminId.value === '' || password.value === '') {
     alert('Please fill all the fields')
   } else {
-    const data = {
-      adminId: adminId.value,
-      password: password.value
-    }
+    const data = await adminStore.setAdmin(adminId.value, password.value)
     console.log(data)
-    adminId.value = ''
-    password.value = ''
+    if (data) {
+      router.push({ name: 'AdminDashboard' })
+    } else {
+      alert('Invalid admin id or password')
+    }
   }
 }
 

@@ -1,32 +1,32 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
-import { loginStudent, getStudentById } from '../api/student.api'
+import { loginAdmin, getAdminById } from '../api/admin.api'
 // loginCoordinator ,getCoordinatorById
-export default defineStore('student', () => {
-  const student = ref(null)
+export default defineStore('admin', () => {
+  const admin = ref(null)
 
-  const setStudent = async (username, password) => {
-    const status = await loginStudent(username, password)
+  const setAdmin = async (username, password) => {
+    const status = await loginAdmin(username, password)
     if (status === 200) {
-      student.value = await getStudentById(username)
-      console.log(student.value)
+      admin.value = await getAdminById(username)
+      console.log(admin.value)
     } else {
-      student.value = null
+      admin.value = null
     }
 
-    return student.value
+    return admin.value
   }
 
-  const isStudentLoggedIn = computed(() => student.value !== null)
+  const isAdminLoggedIn = computed(() => admin.value !== null)
 
-  const logoutStudent = () => {
-    student.value = null
+  const logoutAdmin = () => {
+    admin.value = null
   }
 
   return {
-    student,
-    setStudent,
-    isStudentLoggedIn,
-    logoutStudent
+    admin,
+    setAdmin,
+    isAdminLoggedIn,
+    logoutAdmin
   }
 })
