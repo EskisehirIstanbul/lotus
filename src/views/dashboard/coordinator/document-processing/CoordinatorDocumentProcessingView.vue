@@ -29,33 +29,27 @@
           
                             <div class="card-body" style="height: 320px; color:#1b6068;">
                               <div class="form-group mb-2">
-                                <label for="academic_id">Faculty:</label>
-                                <select class="form-control" id="academic_id" name="academic_id"
-                                  data-placeholder="From group section you should choose course or advisory to access the list."
-                                  style="width: 100%;box-shadow: none;">
-                                  <option value="">Choose one</option>
-                                  <option value="58">Default</option>
-                                  <option value="262">Default</option>
-                                  <option value="22141">Default</option>
-                                  <option value="40299">Default</option>
-                                  <option value="51871">Default</option>
-                                  <option value="60273">Default</option>
-                                </select>
-                              </div>
-                              <div class="form-group mb-2">
-                                <label for="course_id">Department:</label>
-                                <select class="form-control" id="course_id" name="course_id"
-                                  data-placeholder="From group section you should choose course or advisory to access the list."
-                                  style="width: 100%;box-shadow: none;">
-                                  <option value="">Choose one</option>
-                                  <option value="23114">Default</option>
-                                  <option value="23206">Default</option>
-                                  <option value="23343">Default</option>
-                                  <option value="23344">Default</option>
-                                  <option value="23345">Default</option>
-                                  <option value="23342">Default</option>
-                                </select>
-                              </div>
+              <label for="faculty">Faculty:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="faculty"
+                id="faculty"
+                placeholder="faculty"
+                value=""
+              />
+            </div>
+            <div class="form-group mb-2">
+              <label for="department">Department:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="department"
+                id="department"
+                placeholder="department"
+                value=""
+              />
+            </div>
                               
                               <div class="form-group mb-4">
                                 <label for="files">File:</label>

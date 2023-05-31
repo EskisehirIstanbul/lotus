@@ -87,15 +87,14 @@
             type="file"
             accept="image/*"
             style="
-              background-color: #a6ccd1;
+              margin-top: 15px;
+              margin-left: 6px;
               border-radius: 5px;
               color: rgb(78, 78, 78);
               height: 7vh;
-              width: 40%;
+              width: 100%;
             "
           />
-
-          <p style="padding-left: 4%; margin-top: 3%">No file selected</p>
         </div>
       </div>
       <!-- more detail part -->

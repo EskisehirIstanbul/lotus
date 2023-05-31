@@ -6,42 +6,19 @@
           <form style="margin-top: 0%"></form>
           <input type="hidden" name="" />
 
-          <div class="card-body" style="height: 420px; color: #1b6068">
+          <div class="card-body" style="height: 350px; color: #1b6068">
             <div class="form-group mb-2">
-              <label for="academic_id">Contacts:</label>
-              <select
+              <div class="form-group mb-2">
+              <label for="contacts">Contacts:</label>
+              <input
+                type="text"
                 class="form-control"
-                id="academic_id"
-                name="academic_id"
-                data-placeholder="From group section you should choose course or advisory to access the list."
-                style="width: 100%; box-shadow: none"
-              >
-                <option value="">Choose one</option>
-                <option value="58">Doç. Dr. TÜRKER TEKİN ERGÜZEL</option>
-                <option value="262">Dr. Öğr. Üyesi KRİSTİN SURPUHİ BENLİ</option>
-                <option value="22141">Prof. Dr. BURHAN PEKTAŞ</option>
-                <option value="40299">Dr. Öğr. Üyesi BELAYNESH CHEKOL</option>
-                <option value="51871">Dr. Öğr. Üyesi GAMZE USLU</option>
-                <option value="60273">Öğr. Gör. GÜLSÜN GENCER</option>
-              </select>
+                name="contacts"
+                id="contacts"
+                placeholder="contacts"
+                value=""
+              />
             </div>
-            <div class="form-group mb-2">
-              <label for="course_id">Course:</label>
-              <select
-                class="form-control"
-                id="course_id"
-                name="course_id"
-                data-placeholder="From group section you should choose course or advisory to access the list."
-                style="width: 100%; box-shadow: none"
-              >
-                <option value="">Choose one</option>
-                <option value="23114">Image Processing&nbsp;(COME407/1)</option>
-                <option value="23206">German II&nbsp;(GER124/2)</option>
-                <option value="23343">Numerical Analysis&nbsp;(MATH302/1)</option>
-                <option value="23344">Software Project Management&nbsp;(SE302/1)</option>
-                <option value="23345">Summer Practice II&nbsp;(SE384/1)</option>
-                <option value="23342">Emerging Technologies&nbsp;(SE406/1)</option>
-              </select>
             </div>
             <div class="form-group mb-2">
               <label for="subject">Subject:</label>
