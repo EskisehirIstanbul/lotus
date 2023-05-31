@@ -1,8 +1,32 @@
-<script setup>
-import MessageRow from '../../../../components/MessageDetails.vue'
+<script>
+import { onMounted, ref } from 'vue'
+import useMessagesStore from '../../../../stores/messages.store'
+import useCareerCenterStore from '../../../../stores/careercenter.store'
 
-const Coordinator = 'CareerCenter'
+import MessageDetails from '../../../../components/MessageDetails.vue'
+
+export default {
+  components: { MessageDetails },
+  setup() {
+    const messagesStore = useMessagesStore()
+    const careercenterStore = useCareerCenterStore()
+    const CareerCenter = 'careerCenter'
+
+    const messages = ref([])
+
+    onMounted(async () => {
+      const mail = await careercenterStore.careercenter.email
+      messages.value = await messagesStore.setMessagesIncoming(mail)
+    })
+
+    return {
+      messages,
+      CareerCenter
+    }
+  }
+}
 </script>
+
 <template>
   <div data-v-e48d1d00="" class="card card-primary card-outline" style="height: 630px">
     <div data-v-e48d1d00="" class="card-header">
@@ -15,11 +39,12 @@ const Coordinator = 'CareerCenter'
       <div data-v-e48d1d00="" class="table-responsive mailbox-messages">
         <table data-v-e48d1d00="" class="table table-striped">
           <tbody data-v-e48d1d00="">
-            <MessageRow :typ="CareerCenter" />
-            <MessageRow :typ="CareerCenter" />
-            <MessageRow :typ="CareerCenter" />
-            <MessageRow :typ="CareerCenter" />
-            <MessageRow :typ="CareerCenter" />
+            <MessageDetails
+              v-for="message in messages"
+              :key="message.id"
+              :message="message"
+              :typ="CareerCenter"
+            />
           </tbody>
         </table>
       </div>

@@ -1,3 +1,6 @@
+<script setup>
+import MessageOpen from '../../../../components/MessageOpen.vue'
+</script>
 <template>
-  coords
+  <MessageOpen />
 </template>

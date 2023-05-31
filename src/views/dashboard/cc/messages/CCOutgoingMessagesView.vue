@@ -1,82 +1,60 @@
+<script>
+import { onMounted, ref } from 'vue'
+import useMessagesStore from '../../../../stores/messages.store'
+import useCareerCenterStore from '../../../../stores/careercenter.store'
+
+import MessageDetails from '../../../../components/MessageDetails.vue'
+
+export default {
+  components: { MessageDetails },
+  setup() {
+    const messagesStore = useMessagesStore()
+    const careercenterStore = useCareerCenterStore()
+    const CareerCenter = 'careerCenter'
+
+    const messages = ref([])
+
+    onMounted(async () => {
+      const mail = await careercenterStore.careercenter.email
+      messages.value = await messagesStore.setMessagesOutgoing(mail)
+    })
+
+    return {
+      messages,
+      CareerCenter
+    }
+  }
+}
+</script>
+
 <template>
-  <div class="container-fluid">
-      <div class="row" style="margin-top: 20px;">
-        <!-- /.col -->
-        <div class="col-md-9">
-  
-          <div class="card card-primary card-outline" style="height: 550px;">
-  
-            <div class="card-header">
-              <h3 class="card-title" style="color:#2c919c;">
-                Outgoing Messages
-              </h3>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body p-0">
-  
-              <div class="table-responsive mailbox-messages">
-  
-                <table class="table table-striped">
-  
-  
-                  <tbody><tr class="new-message">
-                    <td width="50"></td>
-                    <td width="50"><img src="https://obs.uskudar.edu.tr/oibs/zfoto.aspx?gkm=10113315036324363123734334228373363845635250342003630634224" alt="" height="50"></td>
-                    <td class="mailbox-name">
-                      Dr. Öğr. Üyesi KRİSTİN SURPUHİ BENLİ<br>(kristin.benli@uskudar.edu.tr)
-                    </td>
-                    <td class="mailbox-subject">About</td>
-                    <td class="mailbox-attachment"></td>
-                    <td class="mailbox-date">1 week ago</td>
-                    <td width="100"><a href="#" class="btn btn-sm text-white" style="background-color:#2c919c;"><i class="fa fa-search"></i></a> <a href="#" onclick="return confirm('You are deleting, if you confirm deletion will be done. This cannot be undone!!');" class="btn btn-sm btn-danger" style="margin-left: 3px;"><i class="fa fa-trash-o"></i></a></td>
-                  </tr>
-  
-                                  
-                  <tr>
-                    <td width="50"></td>
-                    <td width="50"><img src="https://obs.uskudar.edu.tr/oibs/zfoto.aspx?gkm=10113315036324363123734334228373363845635250342003630634224" alt="" height="50"></td>
-                    <td class="mailbox-name">
-                      Dr. Öğr. Üyesi KRİSTİN SURPUHİ BENLİ<br>(kristin.benli@uskudar.edu.tr)
-                    </td>
-                    <td class="mailbox-subject">About</td>
-                    <td class="mailbox-attachment"></td>
-                    <td class="mailbox-date">1 week ago</td>
-                    <td width="100"><a href="#" class="btn btn-sm text-white" style="background-color:#2c919c;"><i class="fa fa-search"></i></a> <a href="#" onclick="return confirm('You are deleting, if you confirm deletion will be done. This cannot be undone!!');" class="btn btn-sm btn-danger" style="margin-left: 3px;"><i class="fa fa-trash-o"></i></a></td>
-                  </tr>
-  
-                                  
-                  <tr>
-                    <td width="50"></td>
-                    <td width="50">
-                      <img src="https://obs.uskudar.edu.tr/oibs/zfoto.aspx?gkm=10113315036324363123734334228373363845635250342003630634224" height="50"></td>
-                    <td class="mailbox-name">
-                      Dr. Öğr. Üyesi KRİSTİN SURPUHİ BENLİ<br>(kristin.benli@uskudar.edu.tr)
-                    </td>
-                    <td class="mailbox-subject">About</td>
-                    <td class="mailbox-attachment"></td>
-                    <td class="mailbox-date">2 weeks ago</td>
-                    <td width="100"><a href="#" class="btn btn-sm text-white" style="background-color:#2c919c;"><i class="fa fa-search"></i></a> <a href="#" onclick="return confirm('You are deleting, if you confirm deletion will be done. This cannot be undone!!');" class="btn btn-sm btn-danger" style="margin-left: 3px;"><i class="fa fa-trash-o"></i></a></td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-  
-            </div>
-            <!-- /.card-body -->
-            <div class="card-footer p-0">
-              <div class="mailbox-controls">
-  
-              </div>
-            </div>
-            <!-- /.card-footer -->
-          </div>
-          <!-- /. box -->
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
+  <div data-v-e48d1d00="" class="card card-primary card-outline" style="height: 630px">
+    <div data-v-e48d1d00="" class="card-header">
+      <h3 data-v-e48d1d00="" class="card-title" style="color: rgb(44, 145, 156)">
+        Outgoing Messages
+      </h3>
     </div>
-  </template>
+    <!-- /.card-header -->
+    <div data-v-e48d1d00="" class="card-body p-0">
+      <div data-v-e48d1d00="" class="table-responsive mailbox-messages">
+        <table data-v-e48d1d00="" class="table table-striped">
+          <tbody data-v-e48d1d00="">
+            <MessageDetails
+              v-for="message in messages"
+              :key="message.id"
+              :message="message"
+              :typ="CareerCenter"
+            />
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- /.card-body -->
+    <div data-v-e48d1d00="" class="card-footer p-0">
+      <div data-v-e48d1d00="" class="mailbox-controls"></div>
+    </div>
+  </div>
+</template>
 <style scoped>
 @import url('../../../../assets/css/student.css');
 .material-symbols-outlined {

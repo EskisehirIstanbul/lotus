@@ -156,11 +156,15 @@
                             </div>
                           </div>
                           <div style="right: 0">
-                            <button
-                              style="background-color: #2c919c; border-radius: 10px; width: 155px"
+                            <RouterLink
+                              :to="{ name: 'StudentOpportunityDetails', params: { id: 1 } }"
                             >
-                              More Details
-                            </button>
+                              <button
+                                style="background-color: #2c919c; border-radius: 10px; width: 155px"
+                              >
+                                More Details
+                              </button>
+                            </RouterLink>
                           </div>
                         </div>
                       </div>

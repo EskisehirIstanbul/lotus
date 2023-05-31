@@ -1,8 +1,7 @@
 <script>
 import { ref, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-import {getMessageById} from '../api/messages.api'
-
+import { getMessageById } from '../api/messages.api'
 
 export default {
   setup() {
@@ -18,9 +17,10 @@ export default {
     onMounted(async () => {
       message.value = await getMessageById(messageId)
     })
-    
+
     return {
       backToMessages,
+      messageOpen,
       message
     }
   }
@@ -75,20 +75,22 @@ export default {
                             style="margin-top: -8px"
                           />
                         </td>
-                        <td class="mailbox-name"><small>
-                          from 
-                          {{ message?.from }}
-                          to 
-                          {{ message?.to }}
-                        </small></td>
+                        <td class="mailbox-name">
+                          <small>
+                            from
+                            {{ message?.from }}
+                            to
+                            {{ message?.to }}
+                          </small>
+                        </td>
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td width="100" class="mailbox-date"><small>
-                          
-                          {{ message?.date }}
-
-                        </small></td>
+                        <td width="100" class="mailbox-date">
+                          <small>
+                            {{ message?.date }}
+                          </small>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -103,8 +105,7 @@ export default {
           <div class="card card-primary card-outline" style="height: 350px">
             <div class="card-header pt-3">
               <h6 class="card-title mailbox-subject" style="color: #0e163d">
-                  
-                  {{ message?.subject }}
+                {{ message?.subject }}
               </h6>
             </div>
             <!-- /.card-header -->
@@ -113,8 +114,7 @@ export default {
                 <div class="row">
                   <div class="col ps-4 pe-4 pt-3">
                     <p class="mailbox-content">
-                        
-                        {{ message?.text }}
+                      {{ message?.text }}
                     </p>
                   </div>
                 </div>
