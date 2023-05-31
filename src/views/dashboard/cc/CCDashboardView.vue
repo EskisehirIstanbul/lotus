@@ -1,3 +1,36 @@
+<script>
+import { ref, onMounted } from 'vue'
+import useCareerCenterStore from '../../../../src/stores/careercenter.store'
+import { useRouter } from 'vue-router'
+
+export default {
+  name: 'CCDashboardView',
+  setup() {
+    const careerCenterStore = useCareerCenterStore()
+    const staff = ref(null)
+    const router = useRouter()
+
+    onMounted(() => {
+      staff.value = careerCenterStore.staff
+    })
+
+    if (!careerCenterStore.isCareerCenterLoggedIn) {
+      router.push({ name: 'LoginNavigation' })
+    }
+
+    const logout = () => {
+      careerCenterStore.logoutCareerCenter()
+      router.push({ name: 'LoginNavigation' })
+    }
+
+    return {
+      staff,
+      logout
+    }
+  }
+}
+</script>
+
 <template>
   <!-- Todo  -->
   <div
@@ -15,7 +48,9 @@
         />
       </div>
       <div class="col-3 align-self-center position-absolute start-30 mt-2" style="left: 70px">
-        <h5><small>Name SURNAME</small></h5>
+        <h5>
+          <small> {{ staff?.name }} {{ staff?.surname }} </small>
+        </h5>
       </div>
 
       <div
@@ -23,7 +58,10 @@
         style="right: 5rem"
       >
         <button class="text-white" style="border-radius: 5px; z-index: -1">
-          <RouterLink :to="{ name: 'CCNewMessages' }" style="width: 30px; height: 30px; color: white;">
+          <RouterLink
+            :to="{ name: 'CCNewMessages' }"
+            style="width: 30px; height: 30px; color: white"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="icon icon-tabler icon-tabler-mail"
@@ -50,7 +88,7 @@
         class="col-3 position-absolute align-self-center start-30 mt-2 ms-5 text-end me-3"
         style="right: 0rem"
       >
-        <a href="" class="text-white">
+        <a href="" class="text-white" @click="logout()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="icon icon-tabler icon-tabler-logout"

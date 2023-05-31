@@ -8,7 +8,7 @@ export const loginCareerCenter = async (username, password) => {
   return response.data
 }
 
-export const assignCareerCenter = async (username, password) => {
+export const assignCareerCenter = async (username) => {
   const response = await axios.post('http://localhost:8085/careerCenter/assign', {
     username
   })
@@ -16,6 +16,6 @@ export const assignCareerCenter = async (username, password) => {
 }
 
 export const getCareerCenterById = async (id) => {
-  const response = await axios.get(`http://localhost:8085/staff/${id}`)
+  const response = await axios.get(`http://localhost:8085/careerCenter/${id}`)
   return response.data
 }

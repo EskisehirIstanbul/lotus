@@ -7,6 +7,7 @@ export default defineStore('student', () => {
 
   const setStudent = async (username, password) => {
     const status = await loginStudent(username, password)
+    console.log(status)
     if (status === 200) {
       student.value = await getStudentById(username)
       console.log(student.value)

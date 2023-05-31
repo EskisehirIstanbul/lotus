@@ -1,30 +1,30 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
-import { loginCareerCenter, getCareerCenterById } from '../api/careerCenter.api'
+import { getCareerCenterById } from '../api/careerCenter.api'
 // loginCoordinator ,getCoordinatorById
 export default defineStore('careerCenter', () => {
-  const student = ref(null)
+  const staff = ref(null)
 
   const setCareerCenter = async (username, password) => {
-    const status = await loginCareerCenter(username, password)
-    if (status === 200) {
-      CareerCenter.value = await getCareerCenterById(username)
-      console.log(CareerCenter.value)
-    } else {
-      CareerCenter.value = null
+    password
+    try {
+      staff.value = await getCareerCenterById(username)
+      console.log(staff.value)
+    } catch (error) {
+      staff.value = null
     }
 
-    return CareerCenter.value
+    return staff.value
   }
 
-  const isCareerCenterLoggedIn = computed(() => CareerCenter.value !== null)
+  const isCareerCenterLoggedIn = computed(() => staff.value !== null)
 
   const logoutCareerCenter = () => {
-    CareerCenter.value = null
+    staff.value = null
   }
 
   return {
-    CareerCenter,
+    staff,
     setCareerCenter,
     isCareerCenterLoggedIn,
     logoutCareerCenter

@@ -1,10 +1,10 @@
 <script setup>
 import { ref } from 'vue'
 import AppBackground from '../../components/AppBackground.vue'
-import useStaffStore from '../../stores/staff.store'
+import useCareerCenterStore from '../../stores/careercenter.store'
 import { useRouter } from 'vue-router'
 
-const staffStore = useStudentStore()
+const staffStore = useCareerCenterStore()
 const router = useRouter()
 
 const staffId = ref('')
@@ -14,7 +14,7 @@ async function submit() {
   if (staffId.value === '' || password.value === '') {
     alert('Please fill all the fields')
   } else {
-    const data = await studentStore.setStudent(staffId.value, password.value)
+    const data = await staffStore.setCareerCenter(staffId.value, password.value)
     console.log(data)
     if (data) {
       router.push({ name: 'CCDashboard' })
