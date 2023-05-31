@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue'
 import useCareerCenterStore from '../../../../src/stores/careercenter.store'
 import { useRouter } from 'vue-router'
+import { RouterLink } from 'vue-router'
 
 export default {
   name: 'CCDashboardView',
@@ -25,7 +26,8 @@ export default {
 
     return {
       staff,
-      logout
+      logout,
+      RouterLink
     }
   }
 }
@@ -48,9 +50,11 @@ export default {
         />
       </div>
       <div class="col-3 align-self-center position-absolute start-30 mt-2" style="left: 70px">
-        <h5>
-          <small> {{ staff?.name }} {{ staff?.surname }} </small>
-        </h5>
+        <RouterLink :to="{ name: 'CCHome' }">
+          <h5>
+            <small> {{ staff?.name }} {{ staff?.surname }} </small>
+          </h5>
+        </RouterLink>
       </div>
 
       <div

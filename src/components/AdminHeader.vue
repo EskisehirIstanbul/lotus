@@ -1,8 +1,14 @@
+<script setup>
+import { RouterLink } from 'vue-router'
+</script>
+
 <template>
   <div class="fixed">
     <header class="header">
       <div class="header-right">
-        <div class="admin-panel">Admin Panel</div>
+        <RouterLink :to="{ name: 'AdminHome' }">
+          <div class="admin-panel">Admin Panel</div></RouterLink
+        >
       </div>
       <div class="logo">
         <img

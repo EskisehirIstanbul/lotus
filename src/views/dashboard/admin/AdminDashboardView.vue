@@ -1,15 +1,17 @@
 <script>
 import AdminHeader from '../../../components/AdminHeader.vue'
 import useAdminStore from '../../../stores/admin.store'
-import { useRouter } from 'vue-router'
+import { RouterLink, useRouter } from 'vue-router'
 
 export default {
-  components: { AdminHeader },
+  components: { AdminHeader, RouterLink },
   setup() {
     const adminStore = useAdminStore()
     const router = useRouter()
 
-    if (!adminStore.isAdminLoggedIn) {
+    const adminLoggedIn = adminStore.isAdminLoggedIn
+
+    if (!adminLoggedIn) {
       router.push({ name: 'LoginNavigation' })
     }
 
@@ -31,4 +33,3 @@ export default {
     <RouterView />
   </div>
 </template>
-
