@@ -1,27 +1,29 @@
 <script setup>
-
 import { ref } from 'vue'
 import AppBackground from '../../components/AppBackground.vue'
+import useStaffStore from '../../stores/staff.store'
+import { useRouter } from 'vue-router'
+
+const staffStore = useStudentStore()
+const router = useRouter()
 
 const staffId = ref('')
 const password = ref('')
 
-function submit() {
+async function submit() {
   if (staffId.value === '' || password.value === '') {
     alert('Please fill all the fields')
   } else {
-    const data = {
-      staffId: staffId.value,
-      password: password.value
-    }
+    const data = await studentStore.setStudent(staffId.value, password.value)
     console.log(data)
-    staffId.value = ''
-    password.value = ''
+    if (data) {
+      router.push({ name: 'CCDashboard' })
+    } else {
+      alert('Invalid staff id or password')
+    }
   }
 }
-
 </script>
-
 <template>
   <div class="container cnt d-flex justify-content-center align-items-center" style="height: 100vh">
     <AppBackground />

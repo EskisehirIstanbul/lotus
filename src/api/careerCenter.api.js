@@ -14,3 +14,8 @@ export const assignCareerCenter = async (username, password) => {
   })
   return response.data
 }
+
+export const getCareerCenterById = async (id) => {
+  const response = await axios.get(`http://localhost:8085/staff/${id}`)
+  return response.data
+}

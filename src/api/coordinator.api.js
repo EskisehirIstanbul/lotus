@@ -10,7 +10,12 @@ export const loginCoordinator = async (username, password) => {
 
 export const assignCoordinator = async (username, password) => {
   const response = await axios.post('http://localhost:8085/coordinator/assign', {
-    username
+    username,
+    password
   })
+  return response.data
+}
+export const getCoordinatorById = async (id) => {
+  const response = await axios.get(`http://localhost:8085/student/${id}`)
   return response.data
 }

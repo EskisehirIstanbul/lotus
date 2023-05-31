@@ -1,22 +1,26 @@
 <script setup>
-
 import { ref } from 'vue'
 import AppBackground from '../../components/AppBackground.vue'
+import useCoordinatorStore from '../../stores/coordinator.store'
+import { useRouter } from 'vue-router'
+
+const coordinatorStore = useCoordinatorStore()
+const router = useRouter()
 
 const coordinatorId = ref('')
 const password = ref('')
 
-function submit() {
+async function submit() {
   if (coordinatorId.value === '' || password.value === '') {
     alert('Please fill all the fields')
   } else {
-    const data = {
-      coordinatorId: coordinatorId.value,
-      password: password.value
-    }
+    const data = await coordinatorStore.setCoordinator(coordinatorId.value, password.value)
     console.log(data)
-    coordinatorId.value = ''
-    password.value = ''
+    if (data) {
+      router.push({ name: 'CoordinatorDashboard' })
+    } else {
+      alert('Invalid coordinator id or password')
+    }
   }
 }
 </script>
