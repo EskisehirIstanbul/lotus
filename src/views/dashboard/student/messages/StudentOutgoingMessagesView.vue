@@ -46,7 +46,7 @@ export default {
         </table>
       </div>
     </div>
-    +
+
     <div class="card-footer p-0">
       <div class="mailbox-controls"></div>
     </div>

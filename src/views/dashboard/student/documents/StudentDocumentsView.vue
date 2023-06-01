@@ -109,22 +109,15 @@ export default {
 
                         <div class="card-body" style="height: 220px; color: #1b6068">
                           <div class="form-group mb-2">
-                            <label for="academic_id">Contacts:</label>
-                            <select
+                            <label for="contacts">Contacts:</label>
+                            <input
+                              type="text"
                               class="form-control"
-                              id="academic_id"
-                              name="academic_id"
-                              data-placeholder="From group section you should choose course or advisory to access the list."
-                              style="width: 100%; box-shadow: none; margin-left: -4px"
-                            >
-                              <option value="">Choose one</option>
-                              <option value="58">Doç. Dr. TÜRKER TEKİN ERGÜZEL</option>
-                              <option value="262">Dr. Öğr. Üyesi KRİSTİN SURPUHİ BENLİ</option>
-                              <option value="22141">Prof. Dr. BURHAN PEKTAŞ</option>
-                              <option value="40299">Dr. Öğr. Üyesi BELAYNESH CHEKOL</option>
-                              <option value="51871">Dr. Öğr. Üyesi GAMZE USLU</option>
-                              <option value="60273">Öğr. Gör. GÜLSÜN GENCER</option>
-                            </select>
+                              name="contacts"
+                              id="contacts"
+                              placeholder="contacts"
+                              v-model="to"
+                            />
                           </div>
 
                           <div class="form-group mb-4">
@@ -144,6 +137,7 @@ export default {
                               <div class="MultiFile-list" id="files_list"></div>
                             </div>
                             <button
+                              @click.prevent="submit"
                               class="mb-2 mt-2"
                               type="submit"
                               style="

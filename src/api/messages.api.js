@@ -25,18 +25,18 @@ export const deleteMessageById = async (id) => {
   return response.data
 }
 
-
-
 export const createMessage = async (message) => {
   const response = await axios.post(
-    'http://localhost:8085/messages',
+    'http://localhost:8085/message',
 
     {
+      id: 123,
       from: message.from,
       to: message.to,
-      date: message.date,
-      time: message.time,
+      date: '21 mart',
+      time: '' + new Date().getHours() + ':' + new Date().getMinutes(),
       title: message.title,
+      file: '',
       text: message.text
     }
   )

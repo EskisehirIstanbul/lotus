@@ -10,12 +10,13 @@ export default {
   setup() {
     const messagesStore = useMessagesStore()
     const careercenterStore = useCareerCenterStore()
-    const CareerCenter = 'careerCenter'
+    const CareerCenter = 'CC'
 
     const messages = ref([])
 
     onMounted(async () => {
-      const mail = await careercenterStore.careercenter.email
+      const mail = await careercenterStore.staff.email
+      console.log(mail)
       messages.value = await messagesStore.setMessagesOutgoing(mail)
     })
 

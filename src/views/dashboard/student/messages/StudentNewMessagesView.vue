@@ -1,3 +1,43 @@
+<script>
+import { onMounted, ref } from 'vue'
+import { createMessage } from '../../../../../src/api/messages.api'
+import useStudentStore from '../../../../../src/stores/student.store'
+
+export default {
+  setup() {
+    const from = ref('')
+    const to = ref('')
+    const title = ref('')
+    const text = ref('')
+
+    const studentStore = useStudentStore()
+
+    onMounted(async () => {
+      from.value = await studentStore.student.email
+    })
+
+    const submit = async () => {
+      const message = {
+        from: from.value,
+        to: to.value,
+        title: title.value,
+        subject: title.value,
+        text: text.value
+      }
+
+      await createMessage(message)
+    }
+
+    return {
+      submit,
+      to,
+      title,
+      text
+    }
+  }
+}
+</script>
+
 <template>
   <div class="card card-primary card-outline" style="height: 610px">
     <div class="card-body p-0">
@@ -9,16 +49,16 @@
           <div class="card-body" style="height: 350px; color: #1b6068">
             <div class="form-group mb-2">
               <div class="form-group mb-2">
-              <label for="contacts">Contacts:</label>
-              <input
-                type="text"
-                class="form-control"
-                name="contacts"
-                id="contacts"
-                placeholder="contacts"
-                value=""
-              />
-            </div>
+                <label for="contacts">Contacts:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="contacts"
+                  id="contacts"
+                  placeholder="contacts"
+                  v-model="to"
+                />
+              </div>
             </div>
             <div class="form-group mb-2">
               <label for="subject">Subject:</label>
@@ -28,7 +68,7 @@
                 name="subject"
                 id="subject"
                 placeholder="Subject"
-                value=""
+                v-model="title"
               />
             </div>
 
@@ -40,6 +80,7 @@
                 class="form-control ckeditor"
                 placeholder="Message"
                 style="max-height: 98px; min-height: 98px"
+                v-model="text"
               ></textarea>
             </div>
 
@@ -55,11 +96,11 @@
                   name="files[]"
                   class="form-control MultiFile-applied"
                   id="files"
-                  value=""
                 />
                 <div class="MultiFile-list" id="files_list"></div>
               </div>
               <button
+                @click.prevent="submit"
                 class="mb-2 mt-2"
                 type="submit"
                 style="width: 30%; height: 50px; margin-left: 70%; margin-top: 20px !important"

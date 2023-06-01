@@ -85,6 +85,7 @@
         >
           <input
             type="file"
+            class="button"
             accept="image/*"
             style="
               margin-top: 15px;

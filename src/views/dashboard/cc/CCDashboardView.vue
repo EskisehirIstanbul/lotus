@@ -61,7 +61,10 @@ export default {
         class="col-3 position-absolute align-self-center start-30 mt-2 ms-5 text-end me-2 ps-3"
         style="right: 5rem"
       >
-        <button class="text-white" style="border-radius: 5px; z-index: -1">
+        <button
+          class="btn btn-inner btnBack backIcon col-2 mb-3"
+          style="width: 100px; padding-left: 3px; padding-right: 12px; margin-left: 55px"
+        >
           <RouterLink
             :to="{ name: 'CCNewMessages' }"
             style="width: 30px; height: 30px; color: white"
