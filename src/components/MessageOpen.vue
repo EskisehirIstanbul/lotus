@@ -11,7 +11,7 @@ export default {
     const message = ref({})
 
     const backToMessages = () => {
-      router.push(-1)
+      router.go(-1)
     }
 
     onMounted(async () => {
@@ -20,7 +20,7 @@ export default {
 
     return {
       backToMessages,
-      messageOpen,
+
       message
     }
   }
@@ -129,30 +129,31 @@ export default {
                               class="mailbox-attachment-name text-decoration-none text-reset"
                               ><i class="fa fa-paperclip"></i> Document.pdf</a
                             >
-                           
-                              
-                              <a href="#" class="btn btn-default bttn-inner btn-sm" style="margin-left: 40vb;"
-                                ><small
-                                  ><small>
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      class="icon icon-tabler icon-tabler-download"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      stroke-width="2"
-                                      stroke="currentColor"
-                                      fill="none"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                    >
-                                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                      <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
-                                      <path d="M7 11l5 5l5 -5"></path>
-                                      <path d="M12 4l0 12"></path>
-                                    </svg> </small></small
-                              ></a>
-                            
+
+                            <a
+                              href="#"
+                              class="btn btn-default bttn-inner btn-sm"
+                              style="margin-left: 40vb"
+                              ><small
+                                ><small>
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="icon icon-tabler icon-tabler-download"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="2"
+                                    stroke="currentColor"
+                                    fill="none"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                  >
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
+                                    <path d="M7 11l5 5l5 -5"></path>
+                                    <path d="M12 4l0 12"></path>
+                                  </svg> </small></small
+                            ></a>
                           </div>
                         </li>
                       </ul>
@@ -201,9 +202,9 @@ ol {
 .content {
   height: auto;
 }
-.docBack{
-    background-color: #d5f2f2;
-    border-radius: 6px;
+.docBack {
+  background-color: #d5f2f2;
+  border-radius: 6px;
 }
 
 .card {
@@ -211,8 +212,7 @@ ol {
   padding: 20px;
   border-radius: 10px;
   width: 100%;
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
   height: 320px;
 }
 </style>
