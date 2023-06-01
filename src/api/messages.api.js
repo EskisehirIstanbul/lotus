@@ -33,7 +33,7 @@ export const createMessage = async (message) => {
       id: 123,
       from: message.from,
       to: message.to,
-      date: '21 mart',
+      date: new Date().getDate() + '/' + new Date().getMonth() + '/' + new Date().getFullYear(),
       time: '' + new Date().getHours() + ':' + new Date().getMinutes(),
       title: message.title,
       file: '',

@@ -26,6 +26,7 @@ export default {
       }
 
       await createMessage(message)
+      alert('Message sent successfully!')
     }
 
     return {

@@ -1,21 +1,30 @@
 <script>
-import { useRouter } from 'vue-router'
+import { ref, onMounted } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
+import { getOpportunityById } from '../../../../api/opportunity.api'
 
 export default {
   setup() {
     const router = useRouter()
+    const route = useRoute()
+    const opportunities = ref([])
 
     const goBack = () => {
       router.go(-1)
     }
 
+    onMounted(async () => {
+      opportunities.value = await getOpportunityById(route.params.id)
+    })
+
     return {
-      goBack
+      goBack,
+
+      opportunities
     }
   }
 }
 </script>
-
 <template>
   <section class="content">
     <div class="container-fluid">
